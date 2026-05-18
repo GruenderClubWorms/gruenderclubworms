@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Über uns – Gründerclub Worms e.V.</title>
+  <meta name="description" content="Der Gründerclub Worms e.V. unterstützt Studierende der Hochschule Worms auf dem Weg zur Unternehmensgründung – gemeinnützig, offen, praxisnah." />
+  <link href="https://api.fontshare.com/v2/css?f[]=boska@400,500,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300..700&display=swap" rel="stylesheet">
+  <style>
+    :root,[data-theme="light"]{
+      --text-xs:clamp(.75rem,.7rem + .25vw,.875rem);--text-sm:clamp(.875rem,.8rem + .35vw,1rem);
+      --text-base:clamp(1rem,.95rem + .25vw,1.125rem);--text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);
+      --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);--text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
+      --text-3xl:clamp(2.5rem,1rem + 4vw,5rem);
+      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;
+      --space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;
+      --space-20:5rem;--space-24:6rem;
+      --color-bg:#f7f6f1;--color-surface:#f9f8f3;--color-surface-2:#fbfaf6;
+      --color-surface-offset:#efecea;--color-divider:#ddd9d3;--color-border:#d2cec8;
+      --color-text:#1e1c17;--color-text-muted:#6b6860;--color-text-faint:#b5b3ae;
+      --color-text-inverse:#f9f8f3;
+      --color-primary:#1f6b4a;--color-primary-hover:#175538;--color-primary-active:#0f3d28;
+      --color-primary-highlight:#d2e8dc;
+      --radius-sm:.375rem;--radius-md:.5rem;--radius-lg:.75rem;--radius-xl:1rem;--radius-full:9999px;
+      --transition-interactive:180ms cubic-bezier(.16,1,.3,1);
+      --shadow-sm:0 1px 2px oklch(.15 .01 80/.06);--shadow-md:0 4px 12px oklch(.15 .01 80/.09);
+      --shadow-lg:0 12px 32px oklch(.15 .01 80/.13);
+      --content-narrow:640px;--content-default:960px;--content-wide:1200px;
+      --font-display:'Boska','Georgia',serif;--font-body:'Work Sans','Helvetica Neue',sans-serif;
+    }
+    [data-theme="dark"]{
+      --color-bg:#161512;--color-surface:#1b1a17;--color-surface-2:#1f1e1b;
+      --color-surface-offset:#222019;--color-divider:#2b2924;--color-border:#35332d;
+      --color-text:#d0cec9;--color-text-muted:#7a7874;--color-text-faint:#56544f;
+      --color-text-inverse:#1b1a17;
+      --color-primary:#4d9e74;--color-primary-hover:#3a8560;--color-primary-active:#28694a;
+      --color-primary-highlight:#233b2f;
+      --shadow-sm:0 1px 2px oklch(0 0 0/.25);--shadow-md:0 4px 12px oklch(0 0 0/.35);
+      --shadow-lg:0 12px 32px oklch(0 0 0/.45);
+    }
+    @media(prefers-color-scheme:dark){:root:not([data-theme]){
+      --color-bg:#161512;--color-surface:#1b1a17;--color-surface-2:#1f1e1b;
+      --color-surface-offset:#222019;--color-divider:#2b2924;--color-border:#35332d;
+      --color-text:#d0cec9;--color-text-muted:#7a7874;--color-text-faint:#56544f;
+      --color-text-inverse:#1b1a17;--color-primary:#4d9e74;--color-primary-hover:#3a8560;
+      --color-primary-highlight:#233b2f;
+      --shadow-sm:0 1px 2px oklch(0 0 0/.25);--shadow-md:0 4px 12px oklch(0 0 0/.35);
+      --shadow-lg:0 12px 32px oklch(0 0 0/.45);
+    }}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;scroll-behavior:smooth;scroll-padding-top:var(--space-16)}
+    body{min-height:100dvh;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background:var(--color-bg);line-height:1.65}
+    img,picture,video,canvas,svg{display:block;max-width:100%}
+    h1,h2,h3,h4{text-wrap:balance;line-height:1.15}
+    p,li{text-wrap:pretty;max-width:72ch}
+    input,button,select{font:inherit;color:inherit}
+    button{cursor:pointer;background:none;border:none}
+    ::selection{background:oklch(from var(--color-primary) l c h/.18);color:var(--color-text)}
+    :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
+    a,button,[role="button"]{transition:color var(--transition-interactive),background var(--transition-interactive),border-color var(--transition-interactive),box-shadow var(--transition-interactive),opacity var(--transition-interactive)}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+
+    /* Layout */
+    .container{max-width:var(--content-default);margin-inline:auto;padding-inline:var(--space-6)}
+    .container--narrow{max-width:var(--content-narrow);margin-inline:auto;padding-inline:var(--space-6)}
+    .container--wide{max-width:var(--content-wide);margin-inline:auto;padding-inline:var(--space-6)}
+
+    /* Nav */
+    .site-nav{position:sticky;top:0;z-index:100;background:color-mix(in oklch,var(--color-bg) 88%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid oklch(from var(--color-text) l c h/.08)}
+    .nav-inner{max-width:var(--content-wide);margin-inline:auto;padding-inline:var(--space-6);height:64px;display:flex;align-items:center;justify-content:space-between;gap:var(--space-8)}
+    .nav-logo{display:flex;align-items:center;gap:var(--space-3);text-decoration:none;color:var(--color-text)}
+    .nav-logo-text{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;letter-spacing:-.02em;color:var(--color-text);line-height:1}
+    .nav-logo-text span{color:var(--color-primary)}
+    .nav-links{display:flex;align-items:center;gap:var(--space-6);list-style:none}
+    .nav-links a{font-size:var(--text-sm);font-weight:500;color:var(--color-text-muted);text-decoration:none}
+    .nav-links a:hover{color:var(--color-text)}
+    .nav-links a.active{color:var(--color-primary)}
+    .nav-actions{display:flex;align-items:center;gap:var(--space-3)}
+    .btn{display:inline-flex;align-items:center;gap:var(--space-2);padding:var(--space-2) var(--space-5);border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:600;text-decoration:none;transition:all var(--transition-interactive);white-space:nowrap}
+    .btn-primary{background:var(--color-primary);color:var(--color-text-inverse)}
+    .btn-primary:hover{background:var(--color-primary-hover)}
+    .btn-ghost{color:var(--color-text-muted);border:1px solid oklch(from var(--color-text) l c h/.12)}
+    .btn-ghost:hover{color:var(--color-text);background:var(--color-surface-offset)}
+    .btn-lg{padding:var(--space-3) var(--space-8);font-size:var(--text-base)}
+    .theme-toggle{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:var(--radius-md);color:var(--color-text-muted);border:1px solid oklch(from var(--color-text) l c h/.1)}
+    .theme-toggle:hover{color:var(--color-text);background:var(--color-surface-offset)}
+
+    /* Hero */
+    .hero{padding-block:clamp(var(--space-16),10vw,var(--space-24)) clamp(var(--space-12),7vw,var(--space-20));border-bottom:1px solid oklch(from var(--color-text) l c h/.06);overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-12);align-items:center;max-width:var(--content-wide);margin-inline:auto;padding-inline:var(--space-6)}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-primary);background:var(--color-primary-highlight);padding:var(--space-1) var(--space-3);border-radius:var(--radius-full);margin-bottom:var(--space-6)}
+    .hero-heading{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:700;color:var(--color-text);letter-spacing:-.03em;line-height:1.08;margin-bottom:var(--space-6)}
+    .hero-heading em{font-style:italic;color:var(--color-primary)}
+    .hero-desc{font-size:var(--text-lg);color:var(--color-text-muted);line-height:1.7;max-width:52ch;margin-bottom:var(--space-10)}
+    .hero-meta{display:flex;align-items:center;gap:var(--space-6);flex-wrap:wrap}
+    .hero-stat{display:flex;flex-direction:column;gap:var(--space-1)}
+    .hero-stat-number{font-family:var(--font-display);font-size:var(--text-xl);font-weight:700;color:var(--color-text);letter-spacing:-.02em;line-height:1}
+    .hero-stat-label{font-size:var(--text-xs);color:var(--color-text-muted);font-weight:500;text-transform:uppercase;letter-spacing:.06em}
+    .hero-stat-divider{width:1px;height:40px;background:var(--color-divider)}
+    .hero-visual{position:relative;aspect-ratio:4/3;border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg)}
+    .hero-visual img{width:100%;height:100%;object-fit:cover}
+    .hero-visual-badge{position:absolute;bottom:var(--space-4);left:var(--space-4);background:color-mix(in oklch,var(--color-bg) 92%,transparent);backdrop-filter:blur(12px);border:1px solid oklch(from var(--color-text) l c h/.1);border-radius:var(--radius-lg);padding:var(--space-3) var(--space-4);display:flex;align-items:center;gap:var(--space-3)}
+    .badge-icon{width:36px;height:36px;border-radius:var(--radius-md);background:var(--color-primary);display:flex;align-items:center;justify-content:center;color:var(--color-text-inverse);flex-shrink:0}
+    .badge-text{display:flex;flex-direction:column;gap:2px}
+    .badge-title{font-size:var(--text-xs);font-weight:700;color:var(--color-text);line-height:1.2}
+    .badge-sub{font-size:var(--text-xs);color:var(--color-text-muted);line-height:1.2}
+
+    /* Sections */
+    .section{padding-block:clamp(var(--space-12),8vw,var(--space-24))}
+    .section-label{font-size:var(--text-xs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--color-primary);margin-bottom:var(--space-3)}
+    .section-heading{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:700;letter-spacing:-.025em;color:var(--color-text);line-height:1.12;margin-bottom:var(--space-6)}
+    .section-body{font-size:var(--text-base);color:var(--color-text-muted);line-height:1.75;max-width:60ch}
+
+    /* Mission */
+    .mission{background:var(--color-surface);border-block:1px solid oklch(from var(--color-text) l c h/.06)}
+    .mission-grid{display:grid;grid-template-columns:5fr 4fr;gap:clamp(var(--space-10),6vw,var(--space-16));align-items:start}
+    .mission-body p+p{margin-top:var(--space-5)}
+    .mission-highlight{border-left:2px solid var(--color-primary);padding-left:var(--space-6);margin-top:var(--space-8)}
+    .mission-highlight blockquote{font-family:var(--font-display);font-size:var(--text-xl);font-weight:500;font-style:italic;color:var(--color-text);letter-spacing:-.01em;line-height:1.4}
+    .mission-highlight cite{display:block;font-family:var(--font-body);font-style:normal;font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-3)}
+    .mission-aside{background:var(--color-surface-2);border:1px solid oklch(from var(--color-text) l c h/.08);border-radius:var(--radius-xl);padding:var(--space-8)}
+    .mission-aside-title{font-size:var(--text-sm);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-faint);margin-bottom:var(--space-6)}
+    .purpose-list{list-style:none;display:flex;flex-direction:column;gap:var(--space-4)}
+    .purpose-item{display:flex;gap:var(--space-4);align-items:flex-start}
+    .purpose-dot{width:8px;height:8px;border-radius:var(--radius-full);background:var(--color-primary);margin-top:7px;flex-shrink:0}
+    .purpose-item p{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.6;max-width:none}
+
+    /* Activities */
+    .activities-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:var(--space-5);margin-top:var(--space-10)}
+    .activity-card{background:var(--color-surface);border:1px solid oklch(from var(--color-text) l c h/.08);border-radius:var(--radius-xl);padding:var(--space-8);transition:box-shadow var(--transition-interactive),transform var(--transition-interactive)}
+    .activity-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+    .activity-number{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:700;color:var(--color-primary-highlight);line-height:1;margin-bottom:var(--space-4)}
+    [data-theme="dark"] .activity-number{color:oklch(from var(--color-primary) l c h/.3)}
+    .activity-title{font-weight:700;font-size:var(--text-base);color:var(--color-text);margin-bottom:var(--space-3)}
+    .activity-desc{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.65;max-width:none}
+
+    /* Who/Membership */
+    .who-section{background:var(--color-surface);border-block:1px solid oklch(from var(--color-text) l c h/.06)}
+    .who-grid{display:grid;grid-template-columns:4fr 5fr;gap:clamp(var(--space-10),6vw,var(--space-16));align-items:start}
+    .who-visual{border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-md);aspect-ratio:3/4}
+    .who-visual img{width:100%;height:100%;object-fit:cover}
+    .members-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-top:var(--space-8)}
+    .member-type{background:var(--color-surface-2);border:1px solid oklch(from var(--color-text) l c h/.08);border-radius:var(--radius-lg);padding:var(--space-5)}
+    .member-type-icon{font-size:1.5em;margin-bottom:var(--space-3)}
+    .member-type-title{font-weight:700;font-size:var(--text-sm);color:var(--color-text);margin-bottom:var(--space-1)}
+    .member-type-price{font-size:var(--text-xs);color:var(--color-primary);font-weight:600}
+    .member-type-desc{font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-2);line-height:1.5;max-width:none}
+    .partner-banner{display:flex;align-items:center;gap:var(--space-6);background:var(--color-surface-2);border:1px solid oklch(from var(--color-text) l c h/.08);border-radius:var(--radius-xl);padding:var(--space-6) var(--space-8);margin-top:var(--space-8)}
+    .partner-logo{width:56px;height:56px;background:var(--color-primary-highlight);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--color-primary);font-family:var(--font-display);font-weight:700;font-size:var(--text-lg)}
+    .partner-text{flex:1}
+    .partner-title{font-weight:700;color:var(--color-text);font-size:var(--text-base);margin-bottom:var(--space-1)}
+    .partner-desc{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.5;max-width:none}
+
+    /* Values */
+    .values-strip{background:var(--color-primary);padding-block:clamp(var(--space-10),6vw,var(--space-16))}
+    .values-inner{max-width:var(--content-wide);margin-inline:auto;padding-inline:var(--space-6)}
+    .values-strip .section-label{color:oklch(from var(--color-text-inverse) l c h/.6)}
+    .values-strip .section-heading{color:var(--color-text-inverse);margin-bottom:var(--space-10)}
+    .values-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(220px,100%),1fr));gap:var(--space-6)}
+    .value-item{display:flex;flex-direction:column;gap:var(--space-3)}
+    .value-icon{width:44px;height:44px;border:1px solid oklch(from var(--color-text-inverse) l c h/.2);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;color:var(--color-text-inverse)}
+    .value-title{font-weight:700;color:var(--color-text-inverse);font-size:var(--text-base)}
+    .value-desc{font-size:var(--text-sm);color:oklch(from var(--color-text-inverse) l c h/.7);line-height:1.6;max-width:none}
+
+    /* CTA */
+    .cta-section{text-align:center;padding-block:clamp(var(--space-16),10vw,var(--space-24));border-top:1px solid oklch(from var(--color-text) l c h/.06)}
+    .cta-heading{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:700;color:var(--color-text);letter-spacing:-.025em;line-height:1.15;margin-bottom:var(--space-5)}
+    .cta-sub{font-size:var(--text-lg);color:var(--color-text-muted);margin-bottom:var(--space-8);max-width:48ch;margin-inline:auto}
+    .cta-actions{display:flex;justify-content:center;gap:var(--space-4);flex-wrap:wrap}
+
+    /* Footer */
+    .site-footer{border-top:1px solid oklch(from var(--color-text) l c h/.08);padding-block:var(--space-10)}
+    .footer-inner{max-width:var(--content-wide);margin-inline:auto;padding-inline:var(--space-6);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4)}
+    .footer-copy{font-size:var(--text-sm);color:var(--color-text-faint)}
+    .footer-links{display:flex;gap:var(--space-6)}
+    .footer-links a{font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none}
+    .footer-links a:hover{color:var(--color-text)}
+
+    /* Reveal */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)}
+    .reveal.visible{opacity:1;transform:none}
+
+    /* Responsive */
+    @media(max-width:768px){
+      .hero-grid,.mission-grid,.who-grid{grid-template-columns:1fr}
+      .hero-visual,.who-visual{display:none}
+      .nav-links{display:none}
+      .footer-inner{flex-direction:column;text-align:center}
+      .footer-links{justify-content:center}
+      .partner-banner{flex-direction:column;text-align:center}
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="sr-only">Zum Hauptinhalt springen</a>
+
+<nav class="site-nav" role="navigation" aria-label="Hauptnavigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Gründerclub Worms – Startseite">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true" focusable="false">
+        <rect width="36" height="36" rx="8" fill="var(--color-primary)"/>
+        <text x="7" y="25" font-family="Georgia,serif" font-size="17" font-weight="700" fill="white" font-style="italic">GC</text>
+        <circle cx="28" cy="9" r="3" fill="white" opacity="0.35"/>
+        <line x1="28" y1="9" x2="28" y2="15" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      </svg>
+      <span class="nav-logo-text">Gründer<span>club</span> Worms</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#mission">Mission</a></li>
+      <li><a href="#aktivitaeten">Aktivitäten</a></li>
+      <li><a href="#mitgliedschaft">Mitgliedschaft</a></li>
+      <li><a href="#werte" class="active">Über uns</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" data-theme-toggle aria-label="Zum Dunkelmodus wechseln">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="#mitglied-werden" class="btn btn-primary">Mitglied werden</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-eyebrow reveal">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Eingetragener gemeinnütziger Verein &middot; Worms
+        </div>
+        <h1 id="hero-heading" class="hero-heading reveal">
+          Wo <em>Ideen</em><br>zu Unternehmen<br>werden.
+        </h1>
+        <p class="hero-desc reveal">
+          Der Gründerclub Worms e.V. begleitet Studierende der Hochschule Worms
+          von der ersten Idee bis zur erfolgreichen Gründung – mit Workshops,
+          Netzwerk und echter Begleitung.
+        </p>
+        <div class="hero-meta reveal">
+          <div class="hero-stat">
+            <span class="hero-stat-number">2019</span>
+            <span class="hero-stat-label">Gegründet</span>
+          </div>
+          <div class="hero-stat-divider" aria-hidden="true"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-number">HS Worms</span>
+            <span class="hero-stat-label">Heimat</span>
+          </div>
+          <div class="hero-stat-divider" aria-hidden="true"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-number">§52 AO</span>
+            <span class="hero-stat-label">Gemeinnützig</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual reveal" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop&q=80"
+          alt="Studierende arbeiten gemeinsam an einer Idee" width="800" height="600" loading="eager"/>
+        <div class="hero-visual-badge">
+          <div class="badge-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="badge-text">
+            <span class="badge-title">Hochschule Worms</span>
+            <span class="badge-sub">Offizieller Partnerverein</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="section mission" id="mission" aria-labelledby="mission-heading">
+    <div class="container">
+      <div class="mission-grid">
+        <div class="mission-body reveal">
+          <p class="section-label">Unsere Mission</p>
+          <h2 id="mission-heading" class="section-heading">Gründergeist fördern.<br>Zukunft gestalten.</h2>
+          <p class="section-body">
+            Wir wurden gegründet, um die Lücke zwischen akademischem Lernen und
+            unternehmerischer Praxis zu schließen. Jede Studentin und jeder Student
+            hat das Potenzial, Lösungen für die Probleme von morgen zu entwickeln.
+          </p>
+          <p class="section-body" style="margin-top:var(--space-5)">
+            Als gemeinnütziger Verein nach §&nbsp;52 AO verfolgen wir ausschließlich
+            die Förderung von Wissenschaft, Forschung und Berufsbildung im Bereich der
+            Unternehmensgründung – selbstlos, transparent und nachhaltig.
+          </p>
+          <div class="mission-highlight reveal">
+            <blockquote>„Gründen ist kein Zufall – es ist eine Fähigkeit, die man lernen kann."</blockquote>
+            <cite>— Gründerclub Worms e.V.</cite>
+          </div>
+        </div>
+        <aside class="mission-aside reveal" aria-label="Satzungszwecke">
+          <p class="mission-aside-title">Satzungszwecke</p>
+          <ul class="purpose-list" role="list">
+            <li class="purpose-item"><span class="purpose-dot" aria-hidden="true"></span><p>Förderung von <strong>Wissenschaft und Forschung</strong> (§&nbsp;52 Abs.&nbsp;2 Nr.&nbsp;1 AO)</p></li>
+            <li class="purpose-item"><span class="purpose-dot" aria-hidden="true"></span><p>Förderung der <strong>Berufsbildung &amp; Studentenhilfe</strong> (§&nbsp;52 Abs.&nbsp;2 Nr.&nbsp;7 AO)</p></li>
+            <li class="purpose-item"><span class="purpose-dot" aria-hidden="true"></span><p>Organisation von <strong>Schulungen, Workshops &amp; Vorträgen</strong></p></li>
+            <li class="purpose-item"><span class="purpose-dot" aria-hidden="true"></span><p>Begleitung Studierender bei der <strong>praktischen Umsetzung</strong></p></li>
+            <li class="purpose-item"><span class="purpose-dot" aria-hidden="true"></span><p>Planung von <strong>Exkursionen</strong> &amp; Hochschulprojekte</p></li>
+            <li class="purpose-item"><span class="purpose-dot" aria-hidden="true"></span><p>Mitarbeit in <strong>wissenschaftlichen Forschungsprojekten</strong></p></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aktivitäten -->
+  <section class="section" id="aktivitaeten" aria-labelledby="activities-heading">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">Was wir tun</p>
+        <h2 id="activities-heading" class="section-heading">Unser Angebot für Gründer</h2>
+        <p class="section-body">Von praxisnahen Workshops bis zu Mentoring &ndash; wir begleiten euch in jeder Phase der Gründung.</p>
+      </div>
+      <div class="activities-grid">
+        <article class="activity-card reveal">
+          <div class="activity-number" aria-hidden="true">01</div>
+          <h3 class="activity-title">Workshops &amp; Schulungen</h3>
+          <p class="activity-desc">Praxisorientierte Veranstaltungen zu Businessplan, Finanzierung, Marketing und Recht – von erfahrenen Gründerinnen, Gründern und Expertinnen.</p>
+        </article>
+        <article class="activity-card reveal">
+          <div class="activity-number" aria-hidden="true">02</div>
+          <h3 class="activity-title">Vorträge &amp; Networking</h3>
+          <p class="activity-desc">Inspirierende Speaker aus der Gründerszene teilen ihre Erfahrungen. Wir schaffen Raum, damit aus Kontakten echte Kooperationen werden.</p>
+        </article>
+        <article class="activity-card reveal">
+          <div class="activity-number" aria-hidden="true">03</div>
+          <h3 class="activity-title">Exkursionen</h3>
+          <p class="activity-desc">Besuche bei Startups, Acceleratoren und Technologieparks – damit ihr seht, wie Gründung in der Praxis aussieht.</p>
+        </article>
+        <article class="activity-card reveal">
+          <div class="activity-number" aria-hidden="true">04</div>
+          <h3 class="activity-title">Lehrunterstützung</h3>
+          <p class="activity-desc">Wir ergänzen die Lehre der Hochschule Worms im Bereich Entrepreneurship durch begleitende Projekte und praktische Umsetzung.</p>
+        </article>
+        <article class="activity-card reveal">
+          <div class="activity-number" aria-hidden="true">05</div>
+          <h3 class="activity-title">Forschungsprojekte</h3>
+          <p class="activity-desc">Mitarbeit in wissenschaftlichen Projekten rund ums Thema Gründung – für alle, die Theorie und Praxis verbinden wollen.</p>
+        </article>
+        <article class="activity-card reveal">
+          <div class="activity-number" aria-hidden="true">06</div>
+          <h3 class="activity-title">Individuelle Beratung</h3>
+          <p class="activity-desc">Ihr habt eine konkrete Idee? Unser Netzwerk aus Vorstand, Alumni und Partnern steht euch für persönliche Gespräche zur Verfügung.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mitgliedschaft -->
+  <section class="section who-section" id="mitgliedschaft" aria-labelledby="membership-heading">
+    <div class="container">
+      <div class="who-grid">
+        <div class="who-visual reveal" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=800&fit=crop&q=80"
+            alt="Teamarbeit im Club" width="600" height="800" loading="lazy"/>
+        </div>
+        <div>
+          <div class="reveal">
+            <p class="section-label">Mitgliedschaft</p>
+            <h2 id="membership-heading" class="section-heading">Offen für alle,<br>die gestalten wollen.</h2>
+            <p class="section-body">Mitglied kann jede natürliche und juristische Person werden – ob mit fertiger Idee oder einfach Neugier auf die Gründerwelt.</p>
+          </div>
+          <div class="members-grid reveal">
+            <div class="member-type">
+              <div class="member-type-icon" aria-hidden="true">🎓</div>
+              <p class="member-type-title">Student</p>
+              <p class="member-type-price">Kostenlos</p>
+              <p class="member-type-desc">Für Studierende der HS Worms und kooperierender Hochschulen.</p>
+            </div>
+            <div class="member-type">
+              <div class="member-type-icon" aria-hidden="true">👤</div>
+              <p class="member-type-title">Privatperson</p>
+              <p class="member-type-price">Ab 2 €/Monat</p>
+              <p class="member-type-desc">Für alle, die unsere Mission als Einzelperson unterstützen.</p>
+            </div>
+            <div class="member-type">
+              <div class="member-type-icon" aria-hidden="true">🏢</div>
+              <p class="member-type-title">Firma / Organisation</p>
+              <p class="member-type-price">Ab 5 €/Monat</p>
+              <p class="member-type-desc">Für Unternehmen und Körperschaften, die Gründergeist fördern.</p>
+            </div>
+            <div class="member-type">
+              <div class="member-type-icon" aria-hidden="true">💛</div>
+              <p class="member-type-title">Fördermitglied</p>
+              <p class="member-type-price">Frei wählbar</p>
+              <p class="member-type-desc">Für alle, die über den Mindestbeitrag hinaus fördern möchten.</p>
+            </div>
+          </div>
+          <div class="partner-banner reveal">
+            <div class="partner-logo" aria-hidden="true">HS</div>
+            <div class="partner-text">
+              <p class="partner-title">Hochschule Worms – Unser akademischer Partner</p>
+              <p class="partner-desc">Als Partnerverein der HS Worms ist der Stabsbereich Forschung &amp; Transfer direkt im Vorstand vertreten – ein einzigartiges Band zwischen Verein und Hochschule.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Werte -->
+  <section class="values-strip" id="werte" aria-labelledby="values-heading">
+    <div class="values-inner">
+      <div class="reveal">
+        <p class="section-label">Was uns antreibt</p>
+        <h2 id="values-heading" class="section-heading">Unsere Werte</h2>
+      </div>
+      <div class="values-row">
+        <div class="value-item reveal">
+          <div class="value-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <p class="value-title">Offenheit</p>
+          <p class="value-desc">Jede Idee verdient gehört zu werden – unabhängig von Studiengang, Erfahrung oder Hintergrund.</p>
+        </div>
+        <div class="value-item reveal">
+          <div class="value-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <p class="value-title">Gemeinschaft</p>
+          <p class="value-desc">Gründen gelingt im Team. Wir schaffen ein Umfeld, in dem Zusammenarbeit vor Konkurrenz steht.</p>
+        </div>
+        <div class="value-item reveal">
+          <div class="value-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <p class="value-title">Praxisnähe</p>
+          <p class="value-desc">Theorie ist Grundlage, Praxis ist Ziel. Wir verbinden akademisches Wissen mit realer Umsetzungskompetenz.</p>
+        </div>
+        <div class="value-item reveal">
+          <div class="value-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <p class="value-title">Verlässlichkeit</p>
+          <p class="value-desc">Als eingetragener gemeinnütziger Verein stehen wir für Transparenz, klare Strukturen und langfristiges Engagement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="mitglied-werden" aria-labelledby="cta-heading">
+    <div class="container--narrow">
+      <div class="reveal">
+        <h2 id="cta-heading" class="cta-heading">Bereit, deine Idee<br>in die Tat umzusetzen?</h2>
+        <p class="cta-sub">Werde Mitglied im Gründerclub Worms e.V. – kostenlos für Studierende, offen für alle.</p>
+        <div class="cta-actions">
+          <a href="#" class="btn btn-primary btn-lg">Jetzt Mitglied werden</a>
+          <a href="mailto:gruenderclub@hs-worms.de" class="btn btn-ghost btn-lg">Kontakt aufnehmen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-copy">© 2026 Gründerclub Worms e.V. &middot; Eingetragener gemeinnütziger Verein &middot; Worms, Deutschland</p>
+    <nav class="footer-links" aria-label="Footer-Navigation">
+      <a href="#" target="_blank" rel="noopener noreferrer">Datenschutz</a>
+      <a href="#" target="_blank" rel="noopener noreferrer">Impressum</a>
+      <a href="#" target="_blank" rel="noopener noreferrer">Satzung</a>
+      <a href="mailto:gruenderclub@hs-worms.de">Kontakt</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const t=document.querySelector("[data-theme-toggle]"),r=document.documentElement;
+  let d=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";
+  r.setAttribute("data-theme",d);
+  function setIcon(){
+    if(!t)return;
+    t.setAttribute("aria-label","Zum "+(d==="dark"?"Hellmodus":"Dunkelmodus")+" wechseln");
+    t.innerHTML=d==="dark"
+      ?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      :'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  }
+  setIcon();
+  if(t)t.addEventListener("click",()=>{d=d==="dark"?"light":"dark";r.setAttribute("data-theme",d);setIcon();});
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");obs.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+})();
+</script>
+</body>
+</html>
