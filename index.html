@@ -483,7 +483,7 @@
         Instagram
       </a>
       <a href="#" target="_blank" rel="noopener noreferrer">Datenschutz</a>
-      <a href="#" target="_blank" rel="noopener noreferrer">Impressum</a>
+      <a href="impressum.html">Impressum</a>
       <a href="#" target="_blank" rel="noopener noreferrer">Satzung</a>
       <a href="mailto:gruenderclub@hs-worms.de">Kontakt</a>
     </nav>
@@ -494,7 +494,7 @@
 (function(){
   /* ── THEME ── */
   const t=document.querySelector("[data-theme-toggle]"),r=document.documentElement;
-  let d=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";
+  let d="light";
   r.setAttribute("data-theme",d);
   function setThemeIcon(){
     if(!t)return;
