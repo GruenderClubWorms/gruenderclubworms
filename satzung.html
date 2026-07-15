@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satzung — Gründerclub Worms e.V.</title>
+  <meta name="description" content="Satzung des Gründerclub Worms e.V. — beschlossen in der Mitgliederversammlung, eingetragen beim Amtsgericht Mainz (VR 41582).">
+
+  <script>
+    (function(){
+      var t = localStorage.getItem('gc-theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink:       #E91388;
+      --pink-dim:   #C4106E;
+      --pink-faint: #FDE8F4;
+      --navy:       #0C0C22;
+      --cream:      #F7F4EF;
+      --sand:       #E8E3DB;
+      --ink:        #0F0F0F;
+      --stone:      #6C6660;
+      --white:      #FFFFFF;
+      --font:       'Poppins', sans-serif;
+      --max-w:      1340px;
+      --narrow:     740px;
+      --pad-x:      clamp(1.5rem, 5vw, 5rem);
+      --nav-h:      68px;
+    }
+
+    [data-theme="dark"] {
+      --pink:       #ff4da6;
+      --pink-dim:   #E91388;
+      --pink-faint: #3d0020;
+      --navy:       #0C0C1A;
+      --cream:      #111110;
+      --sand:       #1E1D1A;
+      --ink:        #D4D0CB;
+      --stone:      #7A7874;
+      --white:      #1B1A17;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-h) + 24px);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--font);
+      font-size: clamp(15px, 1.05vw, 17px);
+      line-height: 1.75;
+      color: var(--ink);
+      background: var(--white);
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: var(--pink); text-decoration: none; transition: opacity 0.18s; }
+    a:hover { opacity: 0.72; }
+
+    :focus-visible {
+      outline: 2px solid var(--pink);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+
+    /* ── Nav ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.88);
+      background: color-mix(in srgb, var(--white) 88%, transparent);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid color-mix(in srgb, var(--ink) 7%, transparent);
+    }
+
+    .nav__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .nav__logo { display: flex; align-items: center; height: 36px; flex-shrink: 0; }
+    .nav__logo svg { height: 100%; width: auto; }
+
+    .nav__back {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--stone);
+      transition: color 0.18s;
+      text-decoration: none;
+    }
+    .nav__back:hover { color: var(--pink); opacity: 1; }
+
+    .nav__util { display: flex; align-items: center; gap: 0.5rem; }
+
+    .nav-util-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 34px;
+      padding: 0 0.65rem;
+      border-radius: 6px;
+      border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+      background: none;
+      color: var(--stone);
+      font-family: var(--font);
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: color 0.18s, background 0.18s;
+    }
+    .nav-util-btn:hover { color: var(--ink); background: var(--sand); }
+
+    .theme-icon-moon, .theme-icon-sun { pointer-events: none; }
+    [data-theme="dark"]  .theme-icon-moon { display: none; }
+    [data-theme="light"] .theme-icon-sun  { display: none; }
+
+    /* ── Page Header ── */
+    .page-header {
+      background: var(--cream);
+      padding: clamp(4rem, 10vh, 8rem) var(--pad-x) clamp(3rem, 6vh, 5rem);
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .page-header__inner { max-width: var(--max-w); margin: 0 auto; }
+
+    .page-header__kicker {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.70rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 1.5rem;
+    }
+    .page-header__kicker::before {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 1px;
+      background: var(--pink);
+      flex-shrink: 0;
+    }
+
+    .page-header__h {
+      font-size: clamp(3.5rem, 8vw, 8rem);
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+    }
+
+    .page-header__meta {
+      margin-top: 1.5rem;
+      font-size: 0.82rem;
+      color: var(--stone);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+    }
+
+    .page-header__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--pink-faint);
+      color: var(--pink);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+    }
+
+    /* ── Layout ── */
+    .layout {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 var(--pad-x);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: start;
+    }
+
+    /* ── Sidebar TOC ── */
+    .toc {
+      position: sticky;
+      top: calc(var(--nav-h) + 2rem);
+      padding: 2.5rem 0;
+    }
+
+    .toc__title {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 1rem;
+      padding-left: 0.75rem;
+      border-left: 2px solid var(--sand);
+    }
+
+    .toc__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .toc__list a {
+      display: block;
+      font-size: 0.76rem;
+      color: var(--stone);
+      padding: 0.3rem 0.75rem;
+      border-left: 2px solid var(--sand);
+      transition: color 0.18s, border-color 0.18s;
+      line-height: 1.4;
+    }
+    .toc__list a:hover { color: var(--pink); border-left-color: var(--pink); opacity: 1; }
+
+    /* ── Content ── */
+    .content {
+      padding: 3rem 0 5rem;
+      max-width: var(--narrow);
+    }
+
+    /* ── Paragraphs ── */
+    .para {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--sand);
+      scroll-margin-top: calc(var(--nav-h) + 24px);
+    }
+    .para:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .para__head {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .para__symbol {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--pink);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .para h2 {
+      font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+      font-weight: 600;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+
+    .para__body { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .para__item {
+      display: grid;
+      grid-template-columns: 1.5rem 1fr;
+      gap: 0 0.5rem;
+    }
+
+    .para__item-n {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--stone);
+      padding-top: 0.06em;
+      flex-shrink: 0;
+    }
+
+    .para__item-text {
+      font-size: 0.91rem;
+      color: var(--stone);
+      line-height: 1.75;
+    }
+
+    .para__item-text strong { color: var(--ink); font-weight: 600; }
+
+    /* sub-list (a, b, c…) */
+    .sub-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-top: 0.65rem;
+    }
+
+    .sub-list li {
+      display: grid;
+      grid-template-columns: 1.4rem 1fr;
+      gap: 0 0.4rem;
+      font-size: 0.88rem;
+      color: var(--stone);
+      line-height: 1.65;
+    }
+
+    .sub-list li::before {
+      content: attr(data-label);
+      font-weight: 600;
+      color: var(--pink);
+      font-size: 0.8rem;
+      padding-top: 0.1em;
+    }
+
+    /* plain paragraph (no number) */
+    .para__text {
+      font-size: 0.91rem;
+      color: var(--stone);
+      line-height: 1.75;
+    }
+
+    /* ── Download strip ── */
+    .dl-strip {
+      background: var(--cream);
+      border: 1px solid var(--sand);
+      padding: 1.25rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .dl-strip p { font-size: 0.82rem; color: var(--stone); }
+    .dl-strip strong { color: var(--ink); }
+
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.35rem;
+      background: var(--pink);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border-radius: 2px;
+      white-space: nowrap;
+      transition: background 0.18s;
+      text-decoration: none;
+    }
+    .dl-btn:hover { background: var(--pink-dim); opacity: 1; }
+
+    /* ── Footer ── */
+    .footer {
+      background: var(--navy);
+      color: #fff;
+      padding: 2.5rem var(--pad-x);
+    }
+
+    .footer__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer__copy { font-size: 0.76rem; color: rgba(255,255,255,0.25); }
+
+    .footer__links { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .footer__links a {
+      font-size: 0.76rem;
+      color: rgba(255,255,255,0.35);
+      transition: color 0.18s;
+      text-decoration: none;
+    }
+    .footer__links a:hover { color: #fff; opacity: 1; }
+    .footer__links a.active { color: var(--pink); }
+
+    @media (max-width: 860px) {
+      .layout { grid-template-columns: 1fr; }
+      .toc { display: none; }
+    }
+
+    @media (max-width: 560px) {
+      .footer__inner { flex-direction: column; text-align: center; }
+      .footer__links { justify-content: center; gap: 1.25rem; }
+      .dl-strip { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav class="nav" role="navigation" aria-label="Navigation">
+    <div class="nav__inner">
+
+      <a class="nav__logo" href="index.html" aria-label="Gründerclub Worms — Zur Startseite">
+        <svg viewBox="15 215 385 365" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path fill="#E91388" d="M372.9,417.2v143h-40v-45.1c-31,32.5-74.7,52.8-123,52.8
+            c-93.7,0-170-76.2-170-170s76.2-170,170-170c63.2,0,118.5,34.7,147.8,86.1
+            l-35,19.3c-22.4-39-64.6-65.4-112.7-65.4c-71.7,0-130,58.3-130,130
+            c0,71.7,58.3,130,130,130c50.2,0,93.9-28.6,115.5-70.4h-14.9
+            c-20.4,34.3-57.9,57.4-100.6,57.4c-64.5,0-117-52.5-117-117
+            s52.5-117,117-117c43.3,0,81.1,23.6,101.3,58.6l-35,19.3
+            c-13.4-22.7-38.1-37.9-66.3-37.9c-42.4,0-77,34.5-77,77
+            s34.5,77,77,77c18.5,0,35.4-6.5,48.7-17.4h-28.9v-40.4H372.9z"/>
+        </svg>
+      </a>
+
+      <a href="index.html" class="nav__back">← Zurück zur Startseite</a>
+
+      <div class="nav__util">
+        <button class="nav-util-btn" data-theme-toggle aria-label="Dunkelmodus umschalten">
+          <svg class="theme-icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-icon-sun"  width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- ── Page Header ── -->
+  <header class="page-header">
+    <div class="page-header__inner">
+      <div class="page-header__kicker">Rechtliches</div>
+      <h1 class="page-header__h">Satzung</h1>
+      <div class="page-header__meta">
+        <span>Gründerclub Worms e.V.</span>
+        <span>·</span>
+        <span>Amtsgericht Mainz · VR 41582</span>
+        <span>·</span>
+        <span class="page-header__badge">Gemeinnützig gem. § 52 AO</span>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ── Body ── -->
+  <main id="main">
+    <div class="layout">
+
+      <!-- Sidebar TOC -->
+      <aside>
+        <nav class="toc" aria-label="Paragraphen">
+          <p class="toc__title">Inhalt</p>
+          <ul class="toc__list" role="list">
+            <li><a href="#p1">§ 1 Name, Sitz, Geschäftsjahr</a></li>
+            <li><a href="#p2">§ 2 Zweck des Vereines</a></li>
+            <li><a href="#p3">§ 3 Gemeinnützigkeit</a></li>
+            <li><a href="#p4">§ 4 Erwerb der Mitgliedschaft</a></li>
+            <li><a href="#p5">§ 5 Beendigung der Mitgliedschaft</a></li>
+            <li><a href="#p6">§ 6 Rechte und Pflichten</a></li>
+            <li><a href="#p7">§ 7 Mitgliedsbeiträge</a></li>
+            <li><a href="#p8">§ 8 Vereinsorgane</a></li>
+            <li><a href="#p9">§ 9 Einberufung der MV</a></li>
+            <li><a href="#p10">§ 10 Mitgliederversammlung</a></li>
+            <li><a href="#p11">§ 11 Beschlussfassung MV</a></li>
+            <li><a href="#p12">§ 12 Der Vorstand</a></li>
+            <li><a href="#p13">§ 13 Wahl des Vorstands</a></li>
+            <li><a href="#p14">§ 14 Zuständigkeit des Vorstands</a></li>
+            <li><a href="#p15">§ 15 Beschlussfassung Vorstand</a></li>
+            <li><a href="#p16">§ 16 Vergütung</a></li>
+            <li><a href="#p17">§ 17 Kassenprüfung</a></li>
+            <li><a href="#p18">§ 18 Auflösung</a></li>
+            <li><a href="#p19">§ 19 Inkrafttreten</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Content -->
+      <div class="content">
+
+        <!-- Download -->
+        <div class="dl-strip">
+          <p><strong>Originaldokument</strong><br>Die Satzung als unterzeichnetes PDF-Dokument.</p>
+          <a href="2019-27-03_Satzung_Gruenderclub-Worms.pdf" class="dl-btn" download>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            PDF herunterladen
+          </a>
+        </div>
+
+
+        <!-- § 1 -->
+        <section class="para" id="p1">
+          <div class="para__head">
+            <span class="para__symbol">§ 1</span>
+            <h2>Name, Sitz, Wappen, Verband, Geschäftsjahr</h2>
+          </div>
+          <div class="para__body">
+            <div class="para__item">
+              <span class="para__item-n">1.</span>
+              <p class="para__item-text">Der Verein trägt den Namen: „Gründerclub Worms"</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">2.</span>
+              <p class="para__item-text">Er soll in das Vereinsregister eingetragen werden. Nach der Eintragung führt er den Zusatz „e.V.".</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">3.</span>
+              <p class="para__item-text">Der Verein hat seinen Sitz in Worms.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">4.</span>
+              <p class="para__item-text">Das Geschäftsjahr des Vereins ist das Kalenderjahr.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- § 2 -->
+        <section class="para" id="p2">
+          <div class="para__head">
+            <span class="para__symbol">§ 2</span>
+            <h2>Zweck des Vereines</h2>
+          </div>
+          <div class="para__body">
+            <div class="para__item">
+              <span class="para__item-n">1.</span>
+              <p class="para__item-text">Zweck des Vereins ist die ausschließliche und unmittelbare Verfolgung folgender gemeinnütziger Zwecke im Sinne des Abschnitts „steuerbegünstigte Zwecke" des § 52 Abs. 2 Abgabenordnung:
+                <ul class="sub-list" style="margin-top:0.65rem;">
+                  <li data-label="Nr. 1">die Förderung von Wissenschaft und Forschung</li>
+                  <li data-label="Nr. 7">die Förderung der Erziehung, Volks- und Berufsbildung einschließlich der Studentenhilfe</li>
+                </ul>
+              </p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">2.</span>
+              <p class="para__item-text">Der Verein hat die Aufgabe, an der Gründung von Unternehmen interessierte Studierende der Hochschule Worms und der mit ihr kooperierenden Hochschulen zu informieren, zu beraten und zu unterstützen.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">3.</span>
+              <p class="para__item-text">Der Zweck des Vereins soll insbesondere und beispielsweise erreicht werden durch:
+                <ul class="sub-list">
+                  <li data-label="a)">die Organisation von Schulungen, Workshops und Vorträgen zum Thema Unternehmensgründung;</li>
+                  <li data-label="b)">die Unterstützung der Lehre der Hochschule Worms im Bereich Unternehmensgründung durch die Begleitung Studierender in der praktischen Umsetzung der vermittelten Lehrinhalte;</li>
+                  <li data-label="c)">die Planung und Organisation von Exkursionen;</li>
+                  <li data-label="d)">die Unterstützung von Hochschulprojekten im Bereich der Unternehmensgründung;</li>
+                  <li data-label="e)">die Mitarbeit in wissenschaftlichen und Forschungsprojekten zum Thema Unternehmensgründung.</li>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- § 3 -->
+        <section class="para" id="p3">
+          <div class="para__head">
+            <span class="para__symbol">§ 3</span>
+            <h2>Gemeinnützigkeit</h2>
+          </div>
+          <div class="para__body">
+            <div class="para__item">
+              <span class="para__item-n">1.</span>
+              <p class="para__item-text">Der Verein verfolgt ausschließlich und unmittelbar gemeinnützige Zwecke im Sinne des Abschnitts „Steuerbegünstigte Zwecke" der Abgabenordnung. Der Verein ist selbstlos tätig; er verfolgt nicht in erster Linie eigenwirtschaftliche Zwecke. Mittel des Vereins dürfen nur für die satzungsmäßigen Zwecke verwendet werden.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">2.</span>
+              <p class="para__item-text">Die Mitglieder erhalten keine Zuwendungen aus Mitteln des Vereins. Es darf keine Person durch Ausgaben, die dem Zweck des Vereins fremd sind oder durch unverhältnismäßig hohe Vergütungen begünstigt werden. Mitglieder erhalten bei ihrem Ausscheiden oder bei Auflösung des Vereins weder die eingezahlten Beiträge zurück noch haben sie einen Anspruch auf das Vereinsvermögen.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">3.</span>
+              <p class="para__item-text">Bei Auflösung des Vereins oder bei Wegfall seines bisherigen Zweckes wird das Vereinsvermögen gemäß § 18 dieser Satzung verteilt.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- § 4 -->
+        <section class="para" id="p4">
+          <div class="para__head">
+            <span class="para__symbol">§ 4</span>
+            <h2>Erwerb der Mitgliedschaft</h2>
+          </div>
+          <div class="para__body">
+            <div class="para__item">
+              <span class="para__item-n">1.</span>
+              <p class="para__item-text">Vereinsmitglied kann jede natürliche oder juristische Person werden.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">2.</span>
+              <p class="para__item-text">Die Hochschule Worms als öffentlich-rechtliche Körperschaft ist Vereinsmitglied.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">3.</span>
+              <p class="para__item-text">Der Antrag auf Aufnahme in den Verein ist schriftlich zu stellen.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">4.</span>
+              <p class="para__item-text">Über den Aufnahmeantrag entscheidet der Vorstand.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">5.</span>
+              <p class="para__item-text">Der Antrag soll den Namen, das Geburtsdatum, den Beruf, die Anschrift, die E-Mail-Adresse und gegebenenfalls die Einzugsermächtigung für den Mitgliedsbeitrag des Antragstellers enthalten.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">6.</span>
+              <p class="para__item-text">Eine juristische Person soll bei Bedarf eine Auflistung seiner Mitglieder und gegebenenfalls eine aktuelle Kopie seiner Satzung und Gemeinnützigkeitsbescheinigung übersenden.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- § 5 -->
+        <section class="para" id="p5">
+          <div class="para__head">
+            <span class="para__symbol">§ 5</span>
+            <h2>Beendigung der Mitgliedschaft</h2>
+          </div>
+          <div class="para__body">
+            <div class="para__item">
+              <span class="para__item-n">1.</span>
+              <p class="para__item-text">Die Mitgliedschaft endet wie folgt:
+                <ul class="sub-list">
+                  <li data-label="a)">durch freiwilligen Austritt;</li>
+                  <li data-label="b)">durch Streichung von der Mitgliederliste;</li>
+                  <li data-label="c)">durch Ausschluss aus dem Verein;</li>
+                  <li data-label="d)">durch den Tod des Mitgliedes oder die Auflösung der juristischen Person.</li>
+                </ul>
+              </p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">2.</span>
+              <p class="para__item-text">Der freiwillige Austritt erfolgt durch schriftliche Erklärung gegenüber einem Mitglied des Vorstandes unter Einhaltung einer Kündigungsfrist bis spätestens dem 15. Dezember eines Kalenderjahres zum 31.12 eines Kalenderjahres.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- § 6 -->
+        <section class="para" id="p6">
+          <div class="para__head">
+            <span class="para__symbol">§ 6</span>
+            <h2>Rechte und Pflichten der Mitglieder</h2>
+          </div>
+          <div class="para__body">
+            <div class="para__item">
+              <span class="para__item-n">1.</span>
+              <p class="para__item-text">Jedes Mitglied des Vereines darf dessen angebotene Leistungen in Anspruch nehmen. Jedes Mitglied ist verpflichtet, den Zweck des Vereines zu unterstützen und zu fördern.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">2.</span>
+              <p class="para__item-text">Das Mitglied erklärt sich einverstanden, dass Bilder, Ton- und Videoaufnahmen von ihm anlässlich von Vereins-Veranstaltungen auf den Internetseiten des Vereins veröffentlicht werden dürfen, sowie in den Flyern und Heften des Vereins. Für bereits veröffentlichte Bild-, Ton- und Videoaufnahmen besteht das Veröffentlichungsrecht für den Verein auch weiter, wenn die Mitgliedschaft beendet wird.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- § 7 -->
+        <section class="para" id="p7">
+          <div class="para__head">
+            <span class="para__symbol">§ 7</span>
+            <h2>Mitgliedsbeiträge</h2>
+          </div>
+          <div class="para__body">
+            <div class="para__item">
+              <span class="para__item-n">1.</span>
+              <p class="para__item-text">Von den Mitgliedern werden Beiträge erhoben. Die Höhe des Beitrages und dessen Fälligkeit wird vom Vorstand bestimmt und in einer Beitragsordnung festgelegt.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">2.</span>
+              <p class="para__item-text">Auf Antrag kann der Beitrag selbständig durch den Vorstand reduziert oder zeitlich begrenzt ausgesetzt werden. Der Vorstand kann für bestimmte Mitglieder eine Beitragsfreiheit beschließen. Details werden in der Beitragsordnung festgelegt.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">3.</span>
+              <p class="para__item-text">Die Ehrenmitglieder sind von der Beitragspflicht freigestellt.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">4.</span>
+              <p class="para__item-text">Das Mitglied ist verpflichtet, seiner Beitragspflicht fristgemäß nachzukommen. Der Verein fordert die Beiträge gemäß BGB-Regeln, insbesondere Fristen, wiederkehrende Zahlungen, bei Verzug direkt ein.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- § 8 -->
+        <section class="para" id="p8">
+          <div class="para__head">
+            <span class="para__symbol">§ 8</span>
+            <h2>Vereinsorgane</h2>
+          </div>
+          <div class="para__body">
+            <p class="para__text">Die Organe des Vereines sind:</p>
+            <ul class="sub-list" style="margin-top:0.5rem;">
+              <li data-label="a)">die Mitgliederversammlung</li>
+              <li data-label="b)">der Vorstand</li>
+            </ul>
+          </div>
+        </section>
+
+
+        <!-- § 9 -->
+        <section class="para" id="p9">
+          <div class="para__head">
+            <span class="para__symbol">§ 9</span>
+            <h2>Einberufung der Mitgliederversammlung</h2>
+          </div>
+          <div class="para__body">
+            <div class="para__item">
+              <span class="para__item-n">1.</span>
+              <p class="para__item-text">Die Jahreshauptversammlung (ordentliche Mitgliederversammlung) findet einmal im Jahr, möglichst im 4. Kalenderquartal statt.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">2.</span>
+              <p class="para__item-text">Der Vorstand kann jederzeit eine Mitgliederversammlung einberufen, wenn das Interesse des Vereines es erfordert oder die Einberufung von zwei Fünftel aller stimmberechtigten Mitglieder schriftlich unter Angabe der Gründe vom Vorstand verlangt wird.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">3.</span>
+              <p class="para__item-text">Sie wird vom Vorstand unter Einhaltung einer Frist von 10 Tagen unter Angabe der Tagesordnung einberufen. Die Mitglieder werden schriftlich per Post- oder E-Mail-Adresse eingeladen.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">4.</span>
+              <p class="para__item-text">Ein Einladungsschreiben gilt als dem Mitglied zugegangen, wenn es an die letzte dem Verein schriftlich bekanntgegebene Adresse gerichtet ist.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">5.</span>
+              <p class="para__item-text">Mit der Einberufung der ordentlichen Mitgliederversammlung ist eine Tagesordnung mitzuteilen. Diese soll folgende Punkte enthalten:
+                <ul class="sub-list">
+                  <li data-label="a)">Bericht des Vorstands;</li>
+                  <li data-label="b)">Geschäfts- und Kassenbericht;</li>
+                  <li data-label="c)">Bericht der Kassenprüfer;</li>
+                  <li data-label="d)">Entlastung des Vorstands;</li>
+                  <li data-label="e)">Wahlen, soweit diese erforderlich sind;</li>
+                  <li data-label="f)">Beschlussfassung über vorliegende Anträge;</li>
+                  <li data-label="g)">Aktivitäten und Veranstaltungen für das kommende Kalenderjahr;</li>
+                  <li data-label="h)">Verschiedenes.</li>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- § 10 -->
+        <section class="para" id="p10">
+          <div class="para__head">
+            <span class="para__symbol">§ 10</span>
+            <h2>Mitgliederversammlung</h2>
+          </div>
+          <div class="para__body">
+            <div class="para__item">
+              <span class="para__item-n">1.</span>
+              <p class="para__item-text">Die Mitgliederversammlung des Vereines setzt sich zusammen aus:
+                <ul class="sub-list">
+                  <li data-label="a)">den stimmberechtigten Mitgliedern</li>
+                  <li data-label="b)">dem Vorstand</li>
+                  <li data-label="c)">den Kassenprüfern</li>
+                  <li data-label="d)">den Ehrenmitgliedern</li>
+                </ul>
+              </p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">2.</span>
+              <p class="para__item-text">Die Mitgliederversammlung ist für folgende Angelegenheiten zuständig:
+                <ul class="sub-list">
+                  <li data-label="a)">Bestimmung eines Protokollführers;</li>
+                  <li data-label="b)">Entgegennahme des Jahresberichtes des Vorstands;</li>
+                  <li data-label="c)">Entlastung des Vorstands;</li>
+                  <li data-label="d)">Erlass einer Geschäftsordnung für den Verein;</li>
+                  <li data-label="e)">Ernennung von Ehrenmitgliedern;</li>
+                  <li data-label="f)">Wahl der Mitglieder des Vorstands;</li>
+                  <li data-label="g)">Beschlussfassung über Satzungsänderungen und über die Vereinsauflösung;</li>
+                  <li data-label="h)">Wahl einer/es Ehrenvorsitzende/n. Diese/r hat nur eine repräsentative Stellung und darf für den Verein keine Rechtsgeschäfte tätigen.</li>
+                </ul>
+              </p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">3.</span>
+              <p class="para__item-text">Die Mitgliederversammlung ist nicht öffentlich. Der Versammlungsleiter kann Gäste zulassen. Über die Zulassung der Presse, des Rundfunks und des Fernsehens beschließt der Vorstand.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">4.</span>
+              <p class="para__item-text">In Angelegenheiten, die in den Zuständigkeitsbereich des Vorstands fallen, kann die Mitgliederversammlung Empfehlungen an den Vorstand beschließen. Der Vorstand kann seinerseits in Angelegenheiten seines Zuständigkeitsbereichs die Meinung der Mitgliederversammlung einholen.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- § 11 -->
+        <section class="para" id="p11">
+          <div class="para__head">
+            <span class="para__symbol">§ 11</span>
+            <h2>Beschlussfassung der Mitgliederversammlung</h2>
+          </div>
+          <div class="para__body">
+            <div class="para__item">
+              <span class="para__item-n">1.</span>
+              <p class="para__item-text">Den Vorsitz führt ein Vorstandsmitglied.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">2.</span>
+              <p class="para__item-text">Jedes Mitglied hat eine Stimme.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">3.</span>
+              <p class="para__item-text">Ein Mitglied ist nicht stimmberechtigt, wenn die Beschlussfassung ein Geschäft oder einen Rechtsstreit mit ihm betrifft oder ihm Entlastung erteilt werden soll.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">4.</span>
+              <p class="para__item-text">Die Beschlüsse werden mit einfacher Mehrheit der abgegebenen gültigen Stimmen gefasst, bei Stimmengleichheit gibt die Stimme des den Vorsitz führenden Vorstandsmitglieds den Ausschlag. Satzungsänderungen können nur mit einer Mehrheit von <strong>75 %</strong> der abgegebenen gültigen Stimmen beschlossen werden. Stimmenthaltungen bleiben außer Betracht.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">5.</span>
+              <p class="para__item-text">Über Anträge, die nicht in der Tagesordnung verzeichnet sind, kann in der Mitgliederversammlung nur abgestimmt werden, wenn diese Anträge nicht die Änderung der Satzung und/oder der Vorstandschaft betreffen und mindestens 14 Tage vor der Versammlung schriftlich beim Vereinsleiter eingegangen sind. Dringlichkeitsanträge dürfen nur behandelt werden, wenn die Mitgliederversammlung mit einer 75 % Mehrheit beschließt, dass sie als Tagesordnungspunkt aufgenommen werden; davon ausgenommen sind Satzungsänderungen.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">6.</span>
+              <p class="para__item-text">Für Wahlen gilt folgendes: Hat im ersten Wahlgang kein Kandidat die Mehrheit der abgegebenen gültigen Stimmen erreicht, findet eine Stichwahl zwischen den Kandidaten statt, welche die beiden höchsten Stimmenzahlen erreicht haben. Bei wiederholter Stimmengleichheit entscheidet das Los.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">7.</span>
+              <p class="para__item-text">Geheime Abstimmung muss erfolgen, wenn ein stimmberechtigtes Mitglied es beantragt.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">8.</span>
+              <p class="para__item-text">Über Beschlüsse der Mitgliederversammlung ist ein Protokoll anzufertigen, das von dem jeweiligen Versammlungsleiter zu unterzeichnen ist. Es soll folgende Feststellungen enthalten: Ort und Zeit der Versammlung, die Person des Versammlungsleiters, die Zahl der erschienenen Mitglieder, die Tagesordnung, die Abstimmungsergebnisse. Bei Satzungsänderungen ist der genaue Wortlaut anzugeben.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- § 12 -->
+        <section class="para" id="p12">
+          <div class="para__head">
+            <span class="para__symbol">§ 12</span>
+            <h2>Der Vorstand</h2>
+          </div>
+          <div class="para__body">
+            <div class="para__item">
+              <span class="para__item-n">1.</span>
+              <p class="para__item-text">Der Vorstand des Vereins besteht aus folgenden Personen:
+                <ul class="sub-list">
+                  <li data-label="a)">1. Vorsitzende/r</li>
+                  <li data-label="b)">2. Vorsitzende/r</li>
+                  <li data-label="c)">3. Vorsitzende/r</li>
+                  <li data-label="d)">Schriftführer/in</li>
+                  <li data-label="e)">Kassenwart/in</li>
+                </ul>
+                <br>Die Vorstandsmitglieder a), b), d) und e) werden gewählt. Das Vorstandsmitglied c) ist geborenes Vorstandsmitglied. Für die Amtszeit der gewählten Vorstandsmitglieder wird es von der Leitung des Stabsbereichs Forschung und Transfer der Hochschule Worms aus dem Kreis der Hochschulmitglieder bestimmt.<br><br>Die Funktion des Schriftführers und des Kassenwarts kann mit ein und derselben Person besetzt werden. Eine/r der drei Vorsitzenden kann diese Funktionen auch in Personalunion wahrnehmen.
+              </p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">2.</span>
+              <p class="para__item-text">Der Verein wird gerichtlich und außergerichtlich durch die drei Vorsitzenden vertreten; es besteht Einzelvertretungsberechtigung.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">3.</span>
+              <p class="para__item-text">Der Vorstand gibt sich eine eigene Geschäftsordnung.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">4.</span>
+              <p class="para__item-text">Vorstandsmitglied kann auch eine juristische Person werden. In diesem Falle wird die Vorstandsfunktion von einer von der juristischen Person benannten natürlichen Person wahrgenommen.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">5.</span>
+              <p class="para__item-text">Der Vorstand ist den anderen Vereinsorganen gemäß § 666 BGB (Auskunfts- und Rechenschaftspflicht) verpflichtet.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- § 13 -->
+        <section class="para" id="p13">
+          <div class="para__head">
+            <span class="para__symbol">§ 13</span>
+            <h2>Wahl und Amtsdauer des Vorstands</h2>
+          </div>
+          <div class="para__body">
+            <div class="para__item">
+              <span class="para__item-n">1.</span>
+              <p class="para__item-text">Der Vorstand wird von der Mitgliederversammlung auf die Dauer eines Jahres, vom Tage der Wahl angerechnet, gewählt; er bleibt jedoch bis zur Neuwahl des Vorstands im Amt.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">2.</span>
+              <p class="para__item-text">Jedes nach § 12 zu wählende Vorstandsmitglied ist einzeln zu wählen. Wählbar sind nur Vereinsmitglieder. Scheidet ein Mitglied des Vorstands während der Amtsperiode aus, so kann der Vorstand ein Ersatzmitglied für die restliche Amtsdauer des Ausgeschiedenen berufen.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- § 14 -->
+        <section class="para" id="p14">
+          <div class="para__head">
+            <span class="para__symbol">§ 14</span>
+            <h2>Die Zuständigkeit des Vorstands</h2>
+          </div>
+          <div class="para__body">
+            <div class="para__item">
+              <span class="para__item-n">1.</span>
+              <p class="para__item-text">Der Vorstand ist für alle Angelegenheiten des Vereines zuständig, soweit sie nicht durch die Satzung der Mitgliederversammlung zugewiesen sind.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">2.</span>
+              <p class="para__item-text">Er hat vor allem folgende Aufgaben:
+                <ul class="sub-list">
+                  <li data-label="a)">Einberufung der Mitgliederversammlung;</li>
+                  <li data-label="b)">Vorbereitung der Mitgliederversammlung und Aufstellung der Tagesordnung;</li>
+                  <li data-label="c)">Erstellung eines Jahresberichtes sowie die Buchführung;</li>
+                  <li data-label="d)">Festsetzung der Höhe und Fälligkeit des Jahresbeitrags;</li>
+                  <li data-label="e)">Ausführung der Beschlüsse der Mitgliederversammlung;</li>
+                  <li data-label="f)">Abschluss und Kündigung von Arbeitsverträgen;</li>
+                  <li data-label="g)">Berufung von Projektleitern/Beauftragten;</li>
+                  <li data-label="h)">Festlegung einer Vergütung der Tätigkeiten der Projektleiter/Beauftragten, sofern die wirtschaftliche Lage des Vereins dies zulässt;</li>
+                  <li data-label="i)">Festlegung und Durchführung aller fördernden, ausstattenden und unterstützenden Maßnahmen, die sich aus § 2 ergeben, soweit die wirtschaftliche Lage des Vereines dies zulässt;</li>
+                  <li data-label="j)">Beschlussfassung über Aufnahme, Streichung und Ausschluss von Mitgliedern.</li>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- § 15 -->
+        <section class="para" id="p15">
+          <div class="para__head">
+            <span class="para__symbol">§ 15</span>
+            <h2>Beschlussfassung des Vorstands</h2>
+          </div>
+          <div class="para__body">
+            <div class="para__item">
+              <span class="para__item-n">1.</span>
+              <p class="para__item-text">Der Vorstand fasst seine Beschlüsse im Allgemeinen in Vorstandssitzungen.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">2.</span>
+              <p class="para__item-text">Eine Einberufungsfrist von drei Tagen soll mindestens eingehalten werden. Einer Mitteilung der Tagesordnung bedarf es nicht.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">3.</span>
+              <p class="para__item-text">Der Vorstand ist beschlussfähig, wenn mindestens zwei Vorstandsmitglieder anwesend sind.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">4.</span>
+              <p class="para__item-text">Beschlussfassungen im Umlaufverfahren sind zulässig.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">5.</span>
+              <p class="para__item-text">Über Beschlüsse des Vorstands ist ein Protokoll anzufertigen. § 11 Abs. 8 gilt entsprechend.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- § 16 -->
+        <section class="para" id="p16">
+          <div class="para__head">
+            <span class="para__symbol">§ 16</span>
+            <h2>Vergütung für die Vereinstätigkeit</h2>
+          </div>
+          <div class="para__body">
+            <p class="para__text" style="margin-bottom:0.75rem;">Gemäß dem Gesetz zur weiteren Stärkung des bürgerschaftlichen Engagements gelten folgende Regelungen:</p>
+            <div class="para__item">
+              <span class="para__item-n">1.</span>
+              <p class="para__item-text">Die Vereins- und Organämter werden grundsätzlich ehrenamtlich ausgeübt.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">2.</span>
+              <p class="para__item-text">Bei Bedarf können Vereins- und Organämter, Betreuer und Ausbilder des Vereines im Rahmen der haushaltsrechtlichen Möglichkeiten entgeltlich auf der Grundlage eines Dienstvertrages oder gegen Zahlung einer Aufwandsentschädigung/Ehrenamtspauschale nach § 3 Nr. 26 ff. EStG ausgeübt werden.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">3.</span>
+              <p class="para__item-text">Die Entscheidung über eine entgeltliche Vereinstätigkeit nach Nr. 2 trifft der Vorstand. Gleiches gilt für die Vertragsinhalte und die Vertragsbeendigung.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">4.</span>
+              <p class="para__item-text">Der Vorstand ist ermächtigt, Tätigkeiten für den Verein gegen Zahlung einer angemessenen Vergütung oder Aufwandsentschädigung zu beauftragen. Maßgebend ist die Haushaltslage des Vereins.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">5.</span>
+              <p class="para__item-text">Zur Erledigung der Geschäftsführungsaufgaben und zur Führung der Geschäftsstelle ist der Vorstand ermächtigt, im Rahmen der finanziellen Möglichkeiten des Vereins, hauptamtlich Beschäftigte anzustellen.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">6.</span>
+              <p class="para__item-text">Für zeitlich begrenzte Projekte und Tätigkeitsfelder (z.B. Vereins-Gala, Vereins-Seminar, Vereinszeitung) haben Projektleiter/Verantwortliche einen Aufwendungsersatzanspruch nach § 670 BGB für solche Aufwendungen, die ihnen durch die Tätigkeit für den Verein entstanden sind. Dies gilt jedoch nur dann, wenn der Vorstand diese Aufwände beauftragt und genehmigt hat. Hierzu gehören insbesondere Fahrtkosten, Reisekosten, Porto, Telefon/Internet usw.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">7.</span>
+              <p class="para__item-text">Der Anspruch auf Aufwendungsersatz kann nur innerhalb einer Frist von zwei Monaten nach seiner Entstehung geltend gemacht werden. Erstattungen werden nur gewährt, wenn die Aufwendungen mit Belegen und Aufstellungen, die prüffähig sein müssen, nachgewiesen werden.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">8.</span>
+              <p class="para__item-text">Vom Vorstand können per Beschluss im Rahmen der steuerrechtlichen Möglichkeiten Grenzen über die Höhe des Aufwendungsersatzes nach § 670 BGB festgesetzt werden.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">9.</span>
+              <p class="para__item-text">Weitere Einzelheiten regelt die Geschäftsordnung des Vereins.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- § 17 -->
+        <section class="para" id="p17">
+          <div class="para__head">
+            <span class="para__symbol">§ 17</span>
+            <h2>Wirtschafts- und Kassenprüfung</h2>
+          </div>
+          <div class="para__body">
+            <div class="para__item">
+              <span class="para__item-n">1.</span>
+              <p class="para__item-text">Zur Wirtschafts- und Kassenprüfung bestellt die Mitgliederversammlung auf Dauer eines Jahres zwei Prüfer. Sie dürfen nicht dem Vorstand angehören und müssen nicht dem Verein angehören.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">2.</span>
+              <p class="para__item-text">Bei Ausscheiden eines Kassenprüfers/einer Kassenprüferin oder wenn ein/e Kassenprüfer/in nicht gewählt werden kann, bestellt der Vorstand bis zur nächsten regulären Wahl eine/n kommissarische/n Kassenprüfer/in.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">3.</span>
+              <p class="para__item-text">Die Prüfer sollen einmal jährlich die Kasse prüfen, zumindest im letzten Jahr des Zeitraumes des beantragten Freistellungsbescheides zur Körperschaftssteuer beim Finanzamt gemäß §§ 51–68 AO; § 5 Abs. 1 Nr. 9 KStG und § 3 Nr. 6 GewStG.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">4.</span>
+              <p class="para__item-text">Die Kassenprüfer erstatten der Mitgliederversammlung einen Prüfbericht und beantragen, bei ordnungsgemäßer Führung der Kassengeschäfte, die Entlastung des Vorstandes.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- § 18 -->
+        <section class="para" id="p18">
+          <div class="para__head">
+            <span class="para__symbol">§ 18</span>
+            <h2>Auflösen des Vereines</h2>
+          </div>
+          <div class="para__body">
+            <div class="para__item">
+              <span class="para__item-n">1.</span>
+              <p class="para__item-text">Die Auflösung des Vereines kann nur in einer außerordentlichen Mitgliederversammlung beschlossen werden. Auf dieser Tagesordnung darf nur der Punkt „Auflösung des Vereines" stehen.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">2.</span>
+              <p class="para__item-text">Die Einberufung einer solchen Mitgliederversammlung darf nur erfolgen, wenn folgende Kriterien erfüllt werden:
+                <ul class="sub-list">
+                  <li data-label="a)">der Vorstand hat diese mit zwei Dritteln seiner Mitglieder beschlossen, oder</li>
+                  <li data-label="b)">75 % der stimmberechtigten Mitglieder des Vereines haben diese gefordert.</li>
+                </ul>
+              </p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">3.</span>
+              <p class="para__item-text">Die Versammlung ist beschlussfähig, wenn mindestens <strong>75 % der Mitglieder</strong> anwesend sind.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">4.</span>
+              <p class="para__item-text">Bei Beschlussunfähigkeit ist der Vorstand verpflichtet, innerhalb von vier Wochen eine weitere Mitgliederversammlung mit der gleichen Tagesordnung einzuberufen. Diese Mitgliederversammlung ist ohne Rücksicht auf die Zahl der erschienenen Mitglieder beschlussfähig.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">5.</span>
+              <p class="para__item-text">Die Auflösung des Vereines kann nur mit einer Mehrheit von <strong>75 %</strong> der erschienenen stimmberechtigten Mitglieder beschlossen werden. Der auflösende Verein hat seine Buchhaltung und Kassenprüfung der Hochschule Worms zu übergeben.</p>
+            </div>
+            <div class="para__item">
+              <span class="para__item-n">6.</span>
+              <p class="para__item-text">Das nach der Liquidation vorhandene Vereinsvermögen fällt an die Hochschule Worms mit der Bestimmung, es zu verwalten, bis ein anderer Verein mit den gleichen Bestrebungen und Zielen gegründet wird und es dann dem neu gegründeten Verein zu übergeben. Wird innerhalb von zehn Jahren kein Verein in diesem Sinne gegründet, so hat die Hochschule das Vermögen mit Zustimmung des Finanzamtes gemeinnützigen Zwecken zuzuführen.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- § 19 -->
+        <section class="para" id="p19">
+          <div class="para__head">
+            <span class="para__symbol">§ 19</span>
+            <h2>Inkrafttreten</h2>
+          </div>
+          <div class="para__body">
+            <p class="para__text">Die Satzung wurde in der Mitgliederversammlung am 27. März 2019 beschlossen und tritt nach ihrer Eintragung im Vereinsregister in Kraft.</p>
+            <p class="para__text" style="margin-top:0.5rem;">Worms, 27. März 2019</p>
+          </div>
+        </section>
+
+      </div><!-- /.content -->
+    </div><!-- /.layout -->
+  </main>
+
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__copy">© 2026 Gründerclub Worms e.V. · Eingetragener gemeinnütziger Verein</p>
+      <nav class="footer__links" aria-label="Footer-Navigation">
+        <a href="index.html">Startseite</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="satzung.html" class="active">Satzung</a>
+        <a href="mailto:gruenderclub@hs-worms.de">Kontakt</a>
+      </nav>
+    </div>
+  </footer>
+
+
+  <script>
+  (function () {
+    var root = document.documentElement;
+    var btn = document.querySelector('[data-theme-toggle]');
+    if (btn) {
+      btn.addEventListener('click', function () {
+        var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('gc-theme', next);
+        btn.setAttribute('aria-label', next === 'dark' ? 'Hellmodus umschalten' : 'Dunkelmodus umschalten');
+      });
+    }
+  })();
+  </script>
+
+</body>
+</html>

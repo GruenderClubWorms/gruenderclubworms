@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programme — Gründerclub Worms e.V.</title>
+  <meta name="description" content="Alle Programme und Angebote des Gründerclub Worms e.V. – von Mentoring über Workshops bis zu Forschungsprojekten.">
+
+  <script>
+    (function(){
+      var t = localStorage.getItem('gc-theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink:       #E91388;
+      --pink-dim:   #C4106E;
+      --pink-faint: #FDE8F4;
+      --navy:       #0C0C22;
+      --cream:      #F7F4EF;
+      --sand:       #E8E3DB;
+      --ink:        #0F0F0F;
+      --stone:      #6C6660;
+      --white:      #FFFFFF;
+      --font-serif: 'Poppins', sans-serif;
+      --font-sans:  'Poppins', sans-serif;
+      --max-w:      1340px;
+      --pad-x:      clamp(1.5rem, 5vw, 5rem);
+      --nav-h:      68px;
+    }
+
+    [data-theme="dark"] {
+      --pink:       #ff4da6;
+      --pink-dim:   #E91388;
+      --pink-faint: #3d0020;
+      --navy:       #0C0C1A;
+      --cream:      #111110;
+      --sand:       #1E1D1A;
+      --ink:        #D4D0CB;
+      --stone:      #7A7874;
+      --white:      #1B1A17;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-h) + 20px);
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: clamp(15px, 1.1vw, 17px);
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Nav ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.88);
+      background: color-mix(in srgb, var(--white) 88%, transparent);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid color-mix(in srgb, var(--ink) 7%, transparent);
+    }
+
+    .nav__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .nav__logo {
+      display: flex;
+      align-items: center;
+      height: 36px;
+      flex-shrink: 0;
+    }
+    .nav__logo svg { height: 100%; width: auto; }
+
+    .nav__back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--stone);
+      transition: color 0.18s;
+    }
+    .nav__back:hover { color: var(--pink); }
+
+    .nav__cta {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.55rem 1.35rem;
+      background: var(--pink);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border-radius: 2px;
+      white-space: nowrap;
+      transition: background 0.18s;
+      flex-shrink: 0;
+    }
+    .nav__cta:hover { background: var(--pink-dim); }
+
+    .nav-util-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 34px;
+      padding: 0 0.65rem;
+      border-radius: 6px;
+      border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+      background: none;
+      color: var(--stone);
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: color 0.18s, background 0.18s;
+    }
+    .nav-util-btn:hover { color: var(--ink); background: var(--sand); }
+
+    .theme-icon-moon, .theme-icon-sun { pointer-events: none; }
+    [data-theme="dark"]  .theme-icon-moon { display: none; }
+    [data-theme="light"] .theme-icon-sun  { display: none; }
+
+    .nav__util {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* ── Page header ── */
+    .page-header {
+      background: var(--cream);
+      padding: clamp(4rem, 10vh, 8rem) var(--pad-x) clamp(3rem, 6vh, 5rem);
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .page-header__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .page-header__kicker {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.70rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 1.5rem;
+    }
+    .page-header__kicker::before {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 1px;
+      background: var(--pink);
+      flex-shrink: 0;
+    }
+
+    .page-header__h {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 7vw, 7.5rem);
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+    }
+    .page-header__h em {
+      font-style: italic;
+      color: var(--pink);
+    }
+
+    .page-header__desc {
+      margin-top: 2rem;
+      font-size: 1rem;
+      color: var(--stone);
+      line-height: 1.75;
+      max-width: 580px;
+    }
+
+    /* ── Programme grid ── */
+    .programmes {
+      padding: clamp(4rem, 9vh, 8rem) var(--pad-x);
+      background: var(--white);
+    }
+
+    .programmes__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .prog-card {
+      background: var(--cream);
+      padding: clamp(2rem, 3vw, 2.75rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      transition: background 0.2s;
+    }
+    .prog-card:hover { background: var(--pink-faint); }
+
+    .prog-card__n {
+      font-family: var(--font-serif);
+      font-size: 0.8rem;
+      color: var(--pink);
+      font-style: italic;
+    }
+
+    .prog-card__title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .prog-card__text {
+      color: var(--stone);
+      font-size: 0.88rem;
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    /* ── CTA strip ── */
+    .cta-strip {
+      background: var(--navy);
+      padding: clamp(4rem, 9vh, 7rem) var(--pad-x);
+      color: #fff;
+    }
+
+    .cta-strip__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-strip__text h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 300;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .cta-strip__text p {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+      max-width: 420px;
+    }
+
+    .cta-strip__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2.25rem;
+      background: var(--pink);
+      color: #fff;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 2px;
+      white-space: nowrap;
+      transition: background 0.18s;
+      flex-shrink: 0;
+    }
+    .cta-strip__btn:hover { background: var(--pink-dim); }
+
+    /* ── Footer ── */
+    .footer {
+      background: var(--navy);
+      color: #fff;
+      padding: 2.5rem var(--pad-x);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer__copy { font-size: 0.76rem; color: rgba(255,255,255,0.25); }
+    .footer__link {
+      font-size: 0.76rem;
+      color: rgba(255,255,255,0.35);
+      transition: color 0.18s;
+    }
+    .footer__link:hover { color: #fff; }
+
+    /* ── Reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s cubic-bezier(.16,1,.3,1),
+                  transform 0.5s cubic-bezier(.16,1,.3,1);
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    .prog-card:nth-child(2).reveal { transition-delay: 0.07s; }
+    .prog-card:nth-child(3).reveal { transition-delay: 0.14s; }
+    .prog-card:nth-child(4).reveal { transition-delay: 0.04s; }
+    .prog-card:nth-child(5).reveal { transition-delay: 0.11s; }
+    .prog-card:nth-child(6).reveal { transition-delay: 0.18s; }
+
+    /* ── Focus ── */
+    :focus-visible {
+      outline: 2px solid var(--pink);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        transition-delay: 0ms !important;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .programmes__inner { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 560px) {
+      .programmes__inner { grid-template-columns: 1fr; }
+      .cta-strip__inner  { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav class="nav" role="navigation" aria-label="Navigation">
+    <div class="nav__inner">
+
+      <a class="nav__logo" href="index.html" aria-label="Gründerclub Worms — Zur Startseite">
+        <svg viewBox="15 215 385 365" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path fill="#E91388" d="M372.9,417.2v143h-40v-45.1c-31,32.5-74.7,52.8-123,52.8
+            c-93.7,0-170-76.2-170-170s76.2-170,170-170c63.2,0,118.5,34.7,147.8,86.1
+            l-35,19.3c-22.4-39-64.6-65.4-112.7-65.4c-71.7,0-130,58.3-130,130
+            c0,71.7,58.3,130,130,130c50.2,0,93.9-28.6,115.5-70.4h-14.9
+            c-20.4,34.3-57.9,57.4-100.6,57.4c-64.5,0-117-52.5-117-117
+            s52.5-117,117-117c43.3,0,81.1,23.6,101.3,58.6l-35,19.3
+            c-13.4-22.7-38.1-37.9-66.3-37.9c-42.4,0-77,34.5-77,77
+            s34.5,77,77,77c18.5,0,35.4-6.5,48.7-17.4h-28.9v-40.4H372.9z"/>
+        </svg>
+      </a>
+
+      <a href="index.html" class="nav__back">
+        ← Zurück zur Startseite
+      </a>
+
+      <div class="nav__util">
+        <button class="nav-util-btn" data-theme-toggle aria-label="Dunkelmodus umschalten">
+          <svg class="theme-icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-icon-sun"  width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdKKSD4SngKTAE6pzzfFZ9xwYdTZfBkB0YKMUp2JSKwe9Br0A/viewform?usp=dialog"
+           target="_blank" rel="noopener noreferrer" class="nav__cta">Mitglied werden →</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- ── Page Header ── -->
+  <header class="page-header">
+    <div class="page-header__inner">
+      <div class="page-header__kicker">Gründerclub Worms e.V.</div>
+      <h1 class="page-header__h">Unser <em>Angebot</em><br>für Gründer.</h1>
+      <p class="page-header__desc">
+        Von praxisnahen Workshops bis zu Mentoring und Forschungsprojekten — wir begleiten euch in jeder Phase der Gründung.
+      </p>
+    </div>
+  </header>
+
+
+  <!-- ── Programme ── -->
+  <main id="main">
+    <section class="programmes" aria-label="Alle Programme">
+      <div class="programmes__inner">
+
+        <article class="prog-card reveal">
+          <div class="prog-card__n">01 —</div>
+          <h2 class="prog-card__title">Mentoring &amp; Coaching</h2>
+          <p class="prog-card__text">
+            Einzelgespräche mit erfahrenen Gründerinnen und Gründern, die wissen, womit du gerade kämpfst — und wie man da rauskommt. Kein Consulting, kein Pitch. Echte Gespräche.
+          </p>
+        </article>
+
+        <article class="prog-card reveal">
+          <div class="prog-card__n">02 —</div>
+          <h2 class="prog-card__title">Pitch-Abende</h2>
+          <p class="prog-card__text">
+            Präsentiere deine Idee vor Investoren, Experten und der Community. Klares Format, ehrliches Feedback, offene Diskussion. Ob du pitchst oder zuhörst — du lernst.
+          </p>
+        </article>
+
+        <article class="prog-card reveal">
+          <div class="prog-card__n">03 —</div>
+          <h2 class="prog-card__title">Workshops &amp; Wissen</h2>
+          <p class="prog-card__text">
+            Kompakte Formate zu den Themen, die Gründungen wirklich bewegen: Finanzierung, Recht, Produkt, Vertrieb, Team. Gehalten von Menschen, die es selbst gemacht haben.
+          </p>
+        </article>
+
+        <article class="prog-card reveal">
+          <div class="prog-card__n">04 —</div>
+          <h2 class="prog-card__title">Exkursionen</h2>
+          <p class="prog-card__text">
+            Besuche bei Startups, Acceleratoren und Technologieparks – damit ihr seht, wie Gründung in der Praxis aussieht.
+          </p>
+        </article>
+
+        <article class="prog-card reveal">
+          <div class="prog-card__n">05 —</div>
+          <h2 class="prog-card__title">Lehrunterstützung</h2>
+          <p class="prog-card__text">
+            Wir ergänzen die Lehre der Hochschule Worms im Bereich Entrepreneurship durch begleitende Projekte und praktische Umsetzung.
+          </p>
+        </article>
+
+        <article class="prog-card reveal">
+          <div class="prog-card__n">06 —</div>
+          <h2 class="prog-card__title">Forschungsprojekte</h2>
+          <p class="prog-card__text">
+            Mitarbeit in wissenschaftlichen Projekten rund ums Thema Gründung – für alle, die Theorie und Praxis verbinden wollen.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- ── CTA ── -->
+    <section class="cta-strip" aria-label="Mitglied werden">
+      <div class="cta-strip__inner">
+        <div class="cta-strip__text reveal">
+          <h2>Alle Programme stehen<br>Mitgliedern offen.</h2>
+          <p>Die Mitgliedschaft ist für Studierende der Hochschule Worms vollständig kostenlos.</p>
+        </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdKKSD4SngKTAE6pzzfFZ9xwYdTZfBkB0YKMUp2JSKwe9Br0A/viewform?usp=dialog"
+           target="_blank" rel="noopener noreferrer" class="cta-strip__btn reveal">
+          Jetzt Mitglied werden →
+        </a>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__copy">© 2026 Gründerclub Worms e.V. · Eingetragener gemeinnütziger Verein</p>
+      <div style="display:flex;gap:2rem;flex-wrap:wrap;">
+        <a href="index.html" class="footer__link">Startseite</a>
+        <a href="impressum.html" class="footer__link">Impressum</a>
+        <a href="mailto:gruenderclub@hs-worms.de" class="footer__link">Kontakt</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+  (function () {
+    var root = document.documentElement;
+
+    var themeBtn = document.querySelector('[data-theme-toggle]');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', function () {
+        var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('gc-theme', next);
+        themeBtn.setAttribute('aria-label', next === 'dark' ? 'Hellmodus umschalten' : 'Dunkelmodus umschalten');
+      });
+    }
+
+    var revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+      revealEls.forEach(function (el) { io.observe(el); });
+    } else {
+      revealEls.forEach(function (el) { el.classList.add('visible'); });
+    }
+  })();
+  </script>
+
+</body>
+</html>
