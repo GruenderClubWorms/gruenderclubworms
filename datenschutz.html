@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutz — Gründerclub Worms e.V.</title>
+  <meta name="description" content="Datenschutzerklärung des Gründerclub Worms e.V. gemäß DSGVO.">
+  <meta name="robots" content="noindex">
+
+  <script>
+    (function(){
+      var t = localStorage.getItem('gc-theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink:       #E91388;
+      --pink-dim:   #C4106E;
+      --pink-faint: #FDE8F4;
+      --navy:       #0C0C22;
+      --cream:      #F7F4EF;
+      --sand:       #E8E3DB;
+      --ink:        #0F0F0F;
+      --stone:      #6C6660;
+      --white:      #FFFFFF;
+      --font:       'Poppins', sans-serif;
+      --max-w:      1340px;
+      --narrow:     720px;
+      --pad-x:      clamp(1.5rem, 5vw, 5rem);
+      --nav-h:      68px;
+    }
+
+    [data-theme="dark"] {
+      --pink:       #ff4da6;
+      --pink-dim:   #E91388;
+      --pink-faint: #3d0020;
+      --navy:       #0C0C1A;
+      --cream:      #111110;
+      --sand:       #1E1D1A;
+      --ink:        #D4D0CB;
+      --stone:      #7A7874;
+      --white:      #1B1A17;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-h) + 20px);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--font);
+      font-size: clamp(15px, 1.05vw, 17px);
+      line-height: 1.75;
+      color: var(--ink);
+      background: var(--white);
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: var(--pink); text-decoration: none; transition: opacity 0.18s; }
+    a:hover { opacity: 0.75; }
+
+    :focus-visible {
+      outline: 2px solid var(--pink);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+
+    /* ── Nav ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.88);
+      background: color-mix(in srgb, var(--white) 88%, transparent);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid color-mix(in srgb, var(--ink) 7%, transparent);
+    }
+
+    .nav__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .nav__logo { display: flex; align-items: center; height: 36px; flex-shrink: 0; }
+    .nav__logo svg { height: 100%; width: auto; }
+
+    .nav__back {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--stone);
+      transition: color 0.18s;
+      text-decoration: none;
+    }
+    .nav__back:hover { color: var(--pink); opacity: 1; }
+
+    .nav__util { display: flex; align-items: center; gap: 0.5rem; }
+
+    .nav-util-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 34px;
+      padding: 0 0.65rem;
+      border-radius: 6px;
+      border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+      background: none;
+      color: var(--stone);
+      font-family: var(--font);
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: color 0.18s, background 0.18s;
+    }
+    .nav-util-btn:hover { color: var(--ink); background: var(--sand); }
+
+    .theme-icon-moon, .theme-icon-sun { pointer-events: none; }
+    [data-theme="dark"]  .theme-icon-moon { display: none; }
+    [data-theme="light"] .theme-icon-sun  { display: none; }
+
+    /* ── Page Header ── */
+    .page-header {
+      background: var(--cream);
+      padding: clamp(4rem, 10vh, 8rem) var(--pad-x) clamp(3rem, 6vh, 5rem);
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .page-header__inner { max-width: var(--max-w); margin: 0 auto; }
+
+    .page-header__kicker {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.70rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 1.5rem;
+    }
+    .page-header__kicker::before {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 1px;
+      background: var(--pink);
+      flex-shrink: 0;
+    }
+
+    .page-header__h {
+      font-size: clamp(3.5rem, 8vw, 8rem);
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+    }
+
+    .page-header__meta {
+      margin-top: 1.5rem;
+      font-size: 0.82rem;
+      color: var(--stone);
+    }
+
+    /* ── Content ── */
+    .content {
+      flex: 1;
+      padding: clamp(4rem, 9vh, 7rem) var(--pad-x);
+    }
+
+    .content__inner {
+      max-width: var(--narrow);
+      margin: 0 auto;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--cream);
+      border-left: 3px solid var(--pink);
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .toc__title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 1rem;
+    }
+
+    .toc__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .toc__list a {
+      font-size: 0.86rem;
+      color: var(--stone);
+      transition: color 0.18s;
+    }
+    .toc__list a:hover { color: var(--pink); opacity: 1; }
+
+    /* ── Sections ── */
+    .ds-section {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--sand);
+    }
+    .ds-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .ds-section__n {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 0.5rem;
+    }
+
+    .ds-section h2 {
+      font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+    }
+
+    .ds-section p {
+      font-size: 0.92rem;
+      color: var(--stone);
+      margin-bottom: 0.85rem;
+    }
+    .ds-section p:last-child { margin-bottom: 0; }
+
+    .ds-section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin: 0.75rem 0;
+    }
+    .ds-section ul li {
+      font-size: 0.92rem;
+      color: var(--stone);
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .ds-section ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--pink);
+      font-size: 0.8rem;
+    }
+
+    .ds-section strong { color: var(--ink); font-weight: 600; }
+
+    /* ── Placeholder notice ── */
+    .placeholder-notice {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--pink-faint);
+      border: 1px dashed var(--pink);
+      color: var(--pink);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.4rem 0.85rem;
+      border-radius: 3px;
+      margin-bottom: 1rem;
+    }
+
+    /* ── Contact box ── */
+    .contact-box {
+      background: var(--cream);
+      padding: 1.5rem 1.75rem;
+      margin-top: 1rem;
+    }
+
+    .contact-box p {
+      font-size: 0.88rem;
+      color: var(--stone);
+      margin-bottom: 0.4rem;
+    }
+    .contact-box p:last-child { margin-bottom: 0; }
+    .contact-box strong { color: var(--ink); }
+
+    /* ── Footer ── */
+    .footer {
+      background: var(--navy);
+      color: #fff;
+      padding: 2.5rem var(--pad-x);
+    }
+
+    .footer__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer__copy { font-size: 0.76rem; color: rgba(255,255,255,0.25); }
+
+    .footer__links { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .footer__links a {
+      font-size: 0.76rem;
+      color: rgba(255,255,255,0.35);
+      transition: color 0.18s;
+      text-decoration: none;
+    }
+    .footer__links a:hover { color: #fff; opacity: 1; }
+    .footer__links a.active { color: var(--pink); }
+
+    @media (max-width: 560px) {
+      .footer__inner { flex-direction: column; text-align: center; }
+      .footer__links { justify-content: center; gap: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav class="nav" role="navigation" aria-label="Navigation">
+    <div class="nav__inner">
+
+      <a class="nav__logo" href="index.html" aria-label="Gründerclub Worms — Zur Startseite">
+        <svg viewBox="15 215 385 365" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path fill="#E91388" d="M372.9,417.2v143h-40v-45.1c-31,32.5-74.7,52.8-123,52.8
+            c-93.7,0-170-76.2-170-170s76.2-170,170-170c63.2,0,118.5,34.7,147.8,86.1
+            l-35,19.3c-22.4-39-64.6-65.4-112.7-65.4c-71.7,0-130,58.3-130,130
+            c0,71.7,58.3,130,130,130c50.2,0,93.9-28.6,115.5-70.4h-14.9
+            c-20.4,34.3-57.9,57.4-100.6,57.4c-64.5,0-117-52.5-117-117
+            s52.5-117,117-117c43.3,0,81.1,23.6,101.3,58.6l-35,19.3
+            c-13.4-22.7-38.1-37.9-66.3-37.9c-42.4,0-77,34.5-77,77
+            s34.5,77,77,77c18.5,0,35.4-6.5,48.7-17.4h-28.9v-40.4H372.9z"/>
+        </svg>
+      </a>
+
+      <a href="index.html" class="nav__back">← Zurück zur Startseite</a>
+
+      <div class="nav__util">
+        <button class="nav-util-btn" data-theme-toggle aria-label="Dunkelmodus umschalten">
+          <svg class="theme-icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-icon-sun"  width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- ── Page Header ── -->
+  <header class="page-header">
+    <div class="page-header__inner">
+      <div class="page-header__kicker">Rechtliches</div>
+      <h1 class="page-header__h">Datenschutz</h1>
+      <p class="page-header__meta">
+        Stand: Juli 2026 &nbsp;·&nbsp; Gründerclub Worms e.V.
+        <!-- TODO: Datum bei jeder Aktualisierung anpassen -->
+      </p>
+    </div>
+  </header>
+
+
+  <!-- ── Content ── -->
+  <main id="main" class="content">
+    <div class="content__inner">
+
+      <!-- Inhaltsverzeichnis -->
+      <nav class="toc" aria-label="Inhaltsverzeichnis">
+        <p class="toc__title">Inhalt</p>
+        <ol class="toc__list">
+          <li><a href="#verantwortlicher">1. Verantwortlicher</a></li>
+          <li><a href="#erhobene-daten">2. Welche Daten wir erheben</a></li>
+          <li><a href="#zweck">3. Zweck der Verarbeitung</a></li>
+          <li><a href="#rechtsgrundlage">4. Rechtsgrundlage</a></li>
+          <li><a href="#weitergabe">5. Weitergabe an Dritte</a></li>
+          <li><a href="#speicherdauer">6. Speicherdauer</a></li>
+          <li><a href="#cookies">7. Cookies &amp; Tracking</a></li>
+          <li><a href="#drittdienste">8. Drittanbieter-Dienste</a></li>
+          <li><a href="#rechte">9. Deine Rechte</a></li>
+          <li><a href="#kontakt-ds">10. Kontakt Datenschutz</a></li>
+        </ol>
+      </nav>
+
+
+      <!-- 1. Verantwortlicher -->
+      <section class="ds-section" id="verantwortlicher">
+        <p class="ds-section__n">01 —</p>
+        <h2>Verantwortlicher</h2>
+        <p>Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:</p>
+        <div class="contact-box">
+          <p><strong>Gründerclub Worms e.V.</strong></p>
+          <p>Startup Center, Hochschule Worms<br>Erenburgerstraße 19, 67549 Worms</p>
+          <p>E-Mail: <a href="mailto:gruenderclub@hs-worms.de">gruenderclub@hs-worms.de</a></p>
+          <p>Vertreten durch: Christopher Fernandez Ramos (1. Vorstand)</p>
+        </div>
+      </section>
+
+
+      <!-- 2. Erhobene Daten -->
+      <section class="ds-section" id="erhobene-daten">
+        <p class="ds-section__n">02 —</p>
+        <h2>Welche Daten wir erheben</h2>
+
+        <p><strong>Beim Besuch dieser Website</strong> werden durch den Webserver automatisch folgende technische Daten gespeichert (Server-Logfiles):</p>
+        <ul>
+          <li>IP-Adresse des anfragenden Geräts (anonymisiert)</li>
+          <li>Datum und Uhrzeit des Zugriffs</li>
+          <li>Name und URL der abgerufenen Datei</li>
+          <li>Verwendeter Browser und Betriebssystem</li>
+          <li>Referrer-URL (zuvor besuchte Seite)</li>
+        </ul>
+
+        <p><strong>Beim Mitgliedsantrag</strong> (Google Forms) erheben wir die Daten, die du im Formular einträgst. Welche das im Einzelnen sind, entnimmst du dem jeweiligen Formular.</p>
+
+        <p><strong>Bei E-Mail-Kontakt</strong> speichern wir deine E-Mail-Adresse und den Inhalt deiner Nachricht, um dir antworten zu können.</p>
+
+        <div class="placeholder-notice" aria-label="Platzhalter – bitte aktualisieren">
+          ✎ &nbsp;Bitte ergänzen, falls weitere Daten erhoben werden (z. B. Newsletter, Mitgliederverwaltung)
+        </div>
+      </section>
+
+
+      <!-- 3. Zweck -->
+      <section class="ds-section" id="zweck">
+        <p class="ds-section__n">03 —</p>
+        <h2>Zweck der Verarbeitung</h2>
+        <p>Wir verarbeiten personenbezogene Daten zu folgenden Zwecken:</p>
+        <ul>
+          <li>Bereitstellung und Sicherstellung des Betriebs dieser Website</li>
+          <li>Bearbeitung von Mitgliedsanträgen und Verwaltung der Vereinsmitgliedschaft</li>
+          <li>Beantwortung von Anfragen, die uns per E-Mail erreichen</li>
+          <li>Organisation und Durchführung von Vereinsveranstaltungen</li>
+          <li>Erfüllung gesetzlicher und satzungsmäßiger Pflichten als eingetragener Verein</li>
+        </ul>
+      </section>
+
+
+      <!-- 4. Rechtsgrundlage -->
+      <section class="ds-section" id="rechtsgrundlage">
+        <p class="ds-section__n">04 —</p>
+        <h2>Rechtsgrundlage</h2>
+        <p>Die Verarbeitung deiner Daten erfolgt auf Basis folgender Rechtsgrundlagen der DSGVO:</p>
+        <ul>
+          <li><strong>Art. 6 Abs. 1 lit. a DSGVO</strong> – Einwilligung (z. B. bei freiwilligen Kontaktaufnahmen)</li>
+          <li><strong>Art. 6 Abs. 1 lit. b DSGVO</strong> – Vertragserfüllung (z. B. Mitgliedschaft im Verein)</li>
+          <li><strong>Art. 6 Abs. 1 lit. c DSGVO</strong> – Erfüllung rechtlicher Verpflichtungen</li>
+          <li><strong>Art. 6 Abs. 1 lit. f DSGVO</strong> – Berechtigte Interessen (z. B. Sicherstellung des Websitebetriebs)</li>
+        </ul>
+      </section>
+
+
+      <!-- 5. Weitergabe -->
+      <section class="ds-section" id="weitergabe">
+        <p class="ds-section__n">05 —</p>
+        <h2>Weitergabe an Dritte</h2>
+        <p>Wir geben deine personenbezogenen Daten grundsätzlich nicht an Dritte weiter, es sei denn:</p>
+        <ul>
+          <li>du hast ausdrücklich eingewilligt,</li>
+          <li>die Weitergabe ist zur Erfüllung eines Vertrags erforderlich,</li>
+          <li>wir sind gesetzlich dazu verpflichtet.</li>
+        </ul>
+        <p>Für den Mitgliedsantrag nutzen wir <strong>Google Forms</strong> (Google LLC, USA). Die Datenschutzhinweise von Google findest du unter <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.</p>
+
+        <div class="placeholder-notice" aria-label="Platzhalter – bitte aktualisieren">
+          ✎ &nbsp;Weitere Dienstleister ergänzen, falls zutreffend (z. B. Hosting-Anbieter, E-Mail-Provider)
+        </div>
+      </section>
+
+
+      <!-- 6. Speicherdauer -->
+      <section class="ds-section" id="speicherdauer">
+        <p class="ds-section__n">06 —</p>
+        <h2>Speicherdauer</h2>
+        <p>Wir speichern personenbezogene Daten nur so lange, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.</p>
+        <ul>
+          <li><strong>Server-Logfiles:</strong> werden nach spätestens 14 Tagen automatisch gelöscht</li>
+          <li><strong>E-Mail-Anfragen:</strong> werden nach Abschluss der Kommunikation gelöscht, sofern keine gesetzliche Aufbewahrungspflicht besteht</li>
+          <li><strong>Mitgliedsdaten:</strong> werden für die Dauer der Mitgliedschaft und darüber hinaus gemäß gesetzlicher Aufbewahrungsfristen gespeichert</li>
+        </ul>
+      </section>
+
+
+      <!-- 7. Cookies -->
+      <section class="ds-section" id="cookies">
+        <p class="ds-section__n">07 —</p>
+        <h2>Cookies &amp; lokale Speicherung</h2>
+        <p>Diese Website setzt keine Tracking-Cookies und erstellt keine Nutzerprofile.</p>
+        <p>Im <strong>lokalen Speicher (localStorage)</strong> deines Browsers werden ausschließlich folgende technische Einstellungen gespeichert, die du selbst vornimmst:</p>
+        <ul>
+          <li><code style="font-size:0.82em;background:var(--sand);padding:0.1em 0.4em;border-radius:3px;">gc-theme</code> — deine Auswahl zwischen Hell- und Dunkelmodus</li>
+          <li><code style="font-size:0.82em;background:var(--sand);padding:0.1em 0.4em;border-radius:3px;">gc-lang</code> — deine Spracheinstellung (DE/EN)</li>
+        </ul>
+        <p>Diese Daten verlassen dein Gerät nicht und werden nicht an uns übermittelt.</p>
+
+        <div class="placeholder-notice" aria-label="Platzhalter – bitte aktualisieren">
+          ✎ &nbsp;Falls später Analytics oder andere Cookies eingesetzt werden, hier ergänzen und ggf. Consent-Banner integrieren
+        </div>
+      </section>
+
+
+      <!-- 8. Drittdienste -->
+      <section class="ds-section" id="drittdienste">
+        <p class="ds-section__n">08 —</p>
+        <h2>Drittanbieter-Dienste</h2>
+
+        <p><strong>Google Fonts</strong><br>
+        Diese Website lädt Schriftarten über die Google Fonts API. Dabei wird eine Verbindung zu Servern von Google (Google LLC, USA) hergestellt. Google kann dabei die IP-Adresse des Besuchers erfassen. Weitere Informationen: <a href="https://developers.google.com/fonts/faq/privacy" target="_blank" rel="noopener noreferrer">developers.google.com/fonts/faq/privacy</a></p>
+
+        <p><strong>Google Forms</strong><br>
+        Für den Mitgliedsantrag nutzen wir Google Forms. Wenn du das Formular ausfüllst, werden deine Daten an Google übermittelt und dort gespeichert. Google-Datenschutz: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></p>
+
+        <p><strong>Instagram</strong><br>
+        Auf dieser Website befinden sich Links zu unserem Instagram-Profil. Durch das Anklicken eines solchen Links verlässt du unsere Website. Für die Datenverarbeitung auf Instagram ist Meta Platforms Ireland Ltd. verantwortlich.</p>
+
+        <div class="placeholder-notice" aria-label="Platzhalter – bitte aktualisieren">
+          ✎ &nbsp;Weitere Drittdienste ergänzen (z. B. Hosting-Anbieter, Analysedienste, eingebettete Inhalte)
+        </div>
+      </section>
+
+
+      <!-- 9. Rechte -->
+      <section class="ds-section" id="rechte">
+        <p class="ds-section__n">09 —</p>
+        <h2>Deine Rechte</h2>
+        <p>Als betroffene Person hast du gegenüber uns folgende Rechte:</p>
+        <ul>
+          <li><strong>Auskunft</strong> (Art. 15 DSGVO) — du kannst Auskunft über die zu deiner Person gespeicherten Daten verlangen</li>
+          <li><strong>Berichtigung</strong> (Art. 16 DSGVO) — du kannst die Korrektur unrichtiger Daten verlangen</li>
+          <li><strong>Löschung</strong> (Art. 17 DSGVO) — du kannst die Löschung deiner Daten verlangen, sofern keine gesetzliche Aufbewahrungspflicht besteht</li>
+          <li><strong>Einschränkung</strong> (Art. 18 DSGVO) — du kannst die Einschränkung der Verarbeitung verlangen</li>
+          <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO) — du kannst deine Daten in einem gängigen Format erhalten</li>
+          <li><strong>Widerspruch</strong> (Art. 21 DSGVO) — du kannst der Verarbeitung deiner Daten widersprechen</li>
+          <li><strong>Widerruf</strong> — du kannst eine erteilte Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen</li>
+        </ul>
+        <p>Außerdem hast du das Recht, dich bei einer Datenschutzbehörde zu beschweren. Die zuständige Aufsichtsbehörde für Rheinland-Pfalz ist der <strong>Landesbeauftragte für den Datenschutz und die Informationsfreiheit Rheinland-Pfalz</strong>: <a href="https://www.datenschutz.rlp.de" target="_blank" rel="noopener noreferrer">datenschutz.rlp.de</a></p>
+      </section>
+
+
+      <!-- 10. Kontakt Datenschutz -->
+      <section class="ds-section" id="kontakt-ds">
+        <p class="ds-section__n">10 —</p>
+        <h2>Kontakt Datenschutz</h2>
+        <p>Für Fragen zum Datenschutz oder zur Ausübung deiner Rechte wende dich bitte an:</p>
+        <div class="contact-box">
+          <p><strong>Gründerclub Worms e.V.</strong></p>
+          <p>z. Hd. Datenschutz<br>Startup Center, Hochschule Worms<br>Erenburgerstraße 19, 67549 Worms</p>
+          <p>E-Mail: <a href="mailto:gruenderclub@hs-worms.de">gruenderclub@hs-worms.de</a></p>
+        </div>
+
+        <div class="placeholder-notice" style="margin-top:1.25rem;" aria-label="Platzhalter – bitte aktualisieren">
+          ✎ &nbsp;Falls ein externer Datenschutzbeauftragter bestellt wird, hier Name und Kontakt ergänzen
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__copy">© 2026 Gründerclub Worms e.V. · Eingetragener gemeinnütziger Verein</p>
+      <nav class="footer__links" aria-label="Footer-Navigation">
+        <a href="index.html">Startseite</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html" class="active">Datenschutz</a>
+        <a href="mailto:gruenderclub@hs-worms.de">Kontakt</a>
+      </nav>
+    </div>
+  </footer>
+
+
+  <script>
+  (function () {
+    var root = document.documentElement;
+    var btn = document.querySelector('[data-theme-toggle]');
+    if (btn) {
+      btn.addEventListener('click', function () {
+        var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('gc-theme', next);
+        btn.setAttribute('aria-label', next === 'dark' ? 'Hellmodus umschalten' : 'Dunkelmodus umschalten');
+      });
+    }
+  })();
+  </script>
+
+</body>
+</html>
