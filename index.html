@@ -920,26 +920,6 @@
       font-size: 1rem;
     }
 
-    .event-path--soon {
-      background: var(--cream);
-      border: 1px solid var(--sand);
-    }
-    .event-path--soon:hover { background: var(--sand); }
-    .event-path--soon .event-path__label { color: var(--ink); }
-    .event-path--soon .event-path__desc { color: var(--stone); }
-    .event-path__badge {
-      flex-shrink: 0;
-      padding: 0.35rem 0.75rem;
-      background: var(--sand);
-      color: var(--stone);
-      font-size: 0.66rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      border-radius: 999px;
-      white-space: nowrap;
-    }
-
     @media (max-width: 560px) {
       .event-modal__facts { grid-template-columns: 1fr; }
       .event-path { flex-wrap: wrap; border-radius: 20px; }
@@ -1722,15 +1702,12 @@
           </span>
           <span class="event-path__icon" aria-hidden="true">↗</span>
         </a>
-        <a class="event-path event-path--soon"
-           href="mailto:gruenderclub@hs-worms.de?subject=Interesse%20%E2%80%93%20Als%20Co-Founder%20einem%20Startup%20beitreten&body=Name%3A%0AE-Mail%3A%0AStudiengang%20%28optional%29%3A%0A%0AMeine%20St%C3%A4rken/Skills%20%28z.B.%20Tech%2C%20Design%2C%20Business%2C%20Marketing%2C%20Vertrieb%29%3A%0A%0A%0AErfahrungslevel%20%28Anf%C3%A4nger%20/%20etwas%20Erfahrung%20/%20erfahren%29%3A%0A%0A%0AWelche%20Art%20von%20Startup/Idee%20interessiert%20mich%3A%0A%0A%0ASonstiges%20/%20Links%20%28z.B.%20LinkedIn%2C%20Portfolio%29%3A%0A"
-           title="Formular folgt in Kürze – bis dahin öffnet dies eine E-Mail, um dein Interesse zu hinterlegen"
-           data-en-title="Form coming soon — this opens an email to register your interest for now">
+        <a class="event-path" href="https://forms.gle/PUb1GZyPrjgPAPUV7" target="_blank" rel="noopener noreferrer">
           <span class="event-path__text">
             <span class="event-path__label" data-en="I want to join a startup as co-founder">Ich möchte einem Startup als Co-Founder beitreten</span>
             <span class="event-path__desc" data-en="You're looking for an existing project to join as a co-founder.">Du suchst ein bestehendes Projekt, dem du als Co-Founder:in beitreten kannst.</span>
           </span>
-          <span class="event-path__badge" data-en="Coming soon">Bald verfügbar</span>
+          <span class="event-path__icon" aria-hidden="true">↗</span>
         </a>
       </div>
     </div>
