@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="light">
+<html lang="de" data-lang="de" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Programme — Gründerclub Worms e.V.</title>
-  <meta name="description" content="Alle Programme und Angebote des Gründerclub Worms e.V. – von Mentoring über Workshops bis zu Forschungsprojekten.">
+  <title data-en="Programs — Gründerclub Worms e.V.">Programme — Gründerclub Worms e.V.</title>
+  <meta name="description" content="Alle Programme und Angebote des Gründerclub Worms e.V. – von Mentoring über Workshops bis zu Forschungsprojekten." data-en="All programs and offerings from Gründerclub Worms e.V. — from mentoring to workshops to research projects.">
 
   <script>
     (function(){
       var t = localStorage.getItem('gc-theme');
       if (t) document.documentElement.setAttribute('data-theme', t);
+      var l = localStorage.getItem('gc-lang');
+      if (l) { document.documentElement.setAttribute('data-lang', l); document.documentElement.lang = l; }
     })();
   </script>
 
@@ -144,6 +146,9 @@
     .theme-icon-moon, .theme-icon-sun { pointer-events: none; }
     [data-theme="dark"]  .theme-icon-moon { display: none; }
     [data-theme="light"] .theme-icon-sun  { display: none; }
+
+    [data-lang="de"] .lang-de { color: var(--pink); }
+    [data-lang="en"] .lang-en { color: var(--pink); }
 
     .nav__util {
       display: flex;
@@ -370,7 +375,7 @@
   <nav class="nav" role="navigation" aria-label="Navigation">
     <div class="nav__inner">
 
-      <a class="nav__logo" href="index.html" aria-label="Gründerclub Worms — Zur Startseite">
+      <a class="nav__logo" href="index.html" aria-label="Gründerclub Worms — Zur Startseite" data-en-aria-label="Gründerclub Worms — Go to homepage">
         <svg viewBox="15 215 385 365" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path fill="#E91388" d="M372.9,417.2v143h-40v-45.1c-31,32.5-74.7,52.8-123,52.8
             c-93.7,0-170-76.2-170-170s76.2-170,170-170c63.2,0,118.5,34.7,147.8,86.1
@@ -383,17 +388,20 @@
         </svg>
       </a>
 
-      <a href="index.html" class="nav__back">
+      <a href="index.html" class="nav__back" data-en="&larr; Back to homepage">
         ← Zurück zur Startseite
       </a>
 
       <div class="nav__util">
+        <button class="nav-util-btn" data-lang-toggle aria-label="Sprache wechseln" title="Switch language">
+          <span class="lang-de">DE</span><span style="opacity:0.3;margin:0 0.2em">/</span><span class="lang-en">EN</span>
+        </button>
         <button class="nav-util-btn" data-theme-toggle aria-label="Dunkelmodus umschalten">
           <svg class="theme-icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           <svg class="theme-icon-sun"  width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </button>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdKKSD4SngKTAE6pzzfFZ9xwYdTZfBkB0YKMUp2JSKwe9Br0A/viewform?usp=dialog"
-           target="_blank" rel="noopener noreferrer" class="nav__cta">Mitglied werden →</a>
+           target="_blank" rel="noopener noreferrer" class="nav__cta" data-en="Become a member →">Mitglied werden →</a>
       </div>
 
     </div>
@@ -404,8 +412,8 @@
   <header class="page-header">
     <div class="page-header__inner">
       <div class="page-header__kicker">Gründerclub Worms e.V.</div>
-      <h1 class="page-header__h">Unser <em>Angebot</em><br>für Gründer.</h1>
-      <p class="page-header__desc">
+      <h1 class="page-header__h" data-en="Our <em>offering</em><br>for founders.">Unser <em>Angebot</em><br>für Gründer.</h1>
+      <p class="page-header__desc" data-en="From hands-on workshops to mentoring and research projects — we support you at every stage of founding your company.">
         Von praxisnahen Workshops bis zu Mentoring und Forschungsprojekten — wir begleiten euch in jeder Phase der Gründung.
       </p>
     </div>
@@ -420,47 +428,47 @@
         <article class="prog-card reveal">
           <div class="prog-card__n">01 —</div>
           <h2 class="prog-card__title">Mentoring &amp; Coaching</h2>
-          <p class="prog-card__text">
+          <p class="prog-card__text" data-en="One-on-one conversations with experienced founders who know exactly what you're wrestling with — and how to work through it. No consulting, no pitching. Real conversations.">
             Einzelgespräche mit erfahrenen Gründerinnen und Gründern, die wissen, womit du gerade kämpfst — und wie man da rauskommt. Kein Consulting, kein Pitch. Echte Gespräche.
           </p>
         </article>
 
         <article class="prog-card reveal">
           <div class="prog-card__n">02 —</div>
-          <h2 class="prog-card__title">Pitch-Abende</h2>
-          <p class="prog-card__text">
+          <h2 class="prog-card__title" data-en="Pitch Nights">Pitch-Abende</h2>
+          <p class="prog-card__text" data-en="Present your idea to investors, experts, and the community. Clear format, honest feedback, open discussion. Whether you're pitching or listening — you'll learn.">
             Präsentiere deine Idee vor Investoren, Experten und der Community. Klares Format, ehrliches Feedback, offene Diskussion. Ob du pitchst oder zuhörst — du lernst.
           </p>
         </article>
 
         <article class="prog-card reveal">
           <div class="prog-card__n">03 —</div>
-          <h2 class="prog-card__title">Workshops &amp; Wissen</h2>
-          <p class="prog-card__text">
+          <h2 class="prog-card__title" data-en="Workshops &amp; Knowledge">Workshops &amp; Wissen</h2>
+          <p class="prog-card__text" data-en="Compact sessions on the topics that really move founding forward: funding, legal, product, sales, team. Led by people who've done it themselves.">
             Kompakte Formate zu den Themen, die Gründungen wirklich bewegen: Finanzierung, Recht, Produkt, Vertrieb, Team. Gehalten von Menschen, die es selbst gemacht haben.
           </p>
         </article>
 
         <article class="prog-card reveal">
           <div class="prog-card__n">04 —</div>
-          <h2 class="prog-card__title">Exkursionen</h2>
-          <p class="prog-card__text">
+          <h2 class="prog-card__title" data-en="Field Trips">Exkursionen</h2>
+          <p class="prog-card__text" data-en="Visits to startups, accelerators, and technology parks — so you can see what founding a company looks like in practice.">
             Besuche bei Startups, Acceleratoren und Technologieparks – damit ihr seht, wie Gründung in der Praxis aussieht.
           </p>
         </article>
 
         <article class="prog-card reveal">
           <div class="prog-card__n">05 —</div>
-          <h2 class="prog-card__title">Lehrunterstützung</h2>
-          <p class="prog-card__text">
+          <h2 class="prog-card__title" data-en="Teaching Support">Lehrunterstützung</h2>
+          <p class="prog-card__text" data-en="We complement Worms University of Applied Sciences' entrepreneurship curriculum with accompanying projects and hands-on implementation.">
             Wir ergänzen die Lehre der Hochschule Worms im Bereich Entrepreneurship durch begleitende Projekte und praktische Umsetzung.
           </p>
         </article>
 
         <article class="prog-card reveal">
           <div class="prog-card__n">06 —</div>
-          <h2 class="prog-card__title">Forschungsprojekte</h2>
-          <p class="prog-card__text">
+          <h2 class="prog-card__title" data-en="Research Projects">Forschungsprojekte</h2>
+          <p class="prog-card__text" data-en="Contribute to academic research projects on entrepreneurship — for anyone who wants to connect theory and practice.">
             Mitarbeit in wissenschaftlichen Projekten rund ums Thema Gründung – für alle, die Theorie und Praxis verbinden wollen.
           </p>
         </article>
@@ -473,11 +481,11 @@
     <section class="cta-strip" aria-label="Mitglied werden">
       <div class="cta-strip__inner">
         <div class="cta-strip__text reveal">
-          <h2>Alle Programme stehen<br>Mitgliedern offen.</h2>
-          <p>Die Mitgliedschaft ist für Studierende der Hochschule Worms vollständig kostenlos.</p>
+          <h2 data-en="All programs are<br>open to members.">Alle Programme stehen<br>Mitgliedern offen.</h2>
+          <p data-en="Membership is completely free for students at Worms University of Applied Sciences.">Die Mitgliedschaft ist für Studierende der Hochschule Worms vollständig kostenlos.</p>
         </div>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdKKSD4SngKTAE6pzzfFZ9xwYdTZfBkB0YKMUp2JSKwe9Br0A/viewform?usp=dialog"
-           target="_blank" rel="noopener noreferrer" class="cta-strip__btn reveal">
+           target="_blank" rel="noopener noreferrer" class="cta-strip__btn reveal" data-en="Become a member now →">
           Jetzt Mitglied werden →
         </a>
       </div>
@@ -488,11 +496,11 @@
   <!-- ── Footer ── -->
   <footer class="footer">
     <div class="footer__inner">
-      <p class="footer__copy">© 2026 Gründerclub Worms e.V. · Eingetragener gemeinnütziger Verein</p>
+      <p class="footer__copy" data-en="© 2026 Gründerclub Worms e.V. · Registered non-profit association">© 2026 Gründerclub Worms e.V. · Eingetragener gemeinnütziger Verein</p>
       <div style="display:flex;gap:2rem;flex-wrap:wrap;">
-        <a href="index.html" class="footer__link">Startseite</a>
-        <a href="impressum.html" class="footer__link">Impressum</a>
-        <a href="mailto:gruenderclub@hs-worms.de" class="footer__link">Kontakt</a>
+        <a href="index.html" class="footer__link" data-en="Home">Startseite</a>
+        <a href="impressum.html" class="footer__link" data-en="Legal Notice">Impressum</a>
+        <a href="mailto:gruenderclub@hs-worms.de" class="footer__link" data-en="Contact">Kontakt</a>
       </div>
     </div>
   </footer>
@@ -501,16 +509,70 @@
   <script>
   (function () {
     var root = document.documentElement;
+    var savedLang = localStorage.getItem('gc-lang') || 'de';
+    root.setAttribute('data-lang', savedLang);
+    root.lang = savedLang;
+
+    /* ── i18n: translate all elements carrying a data-en payload ── */
+    function translatePage(lang) {
+      document.querySelectorAll('[data-en]').forEach(function (el) {
+        if (el.dataset.de === undefined) el.dataset.de = el.innerHTML;
+        el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.de;
+      });
+      ['aria-label', 'alt', 'title'].forEach(function (attr) {
+        var camel = attr.replace(/-([a-z])/g, function (m, c) { return c.toUpperCase(); });
+        var enKey = 'en' + camel.charAt(0).toUpperCase() + camel.slice(1);
+        var deKey = 'de' + camel.charAt(0).toUpperCase() + camel.slice(1);
+        document.querySelectorAll('[data-en-' + attr + ']').forEach(function (el) {
+          if (el.dataset[deKey] === undefined) el.dataset[deKey] = el.getAttribute(attr) || '';
+          el.setAttribute(attr, lang === 'en' ? el.dataset[enKey] : el.dataset[deKey]);
+        });
+      });
+      var titleEl = document.querySelector('title[data-en]');
+      if (titleEl) {
+        if (titleEl.dataset.de === undefined) titleEl.dataset.de = titleEl.textContent;
+        titleEl.textContent = lang === 'en' ? titleEl.dataset.en : titleEl.dataset.de;
+      }
+      var metaDesc = document.querySelector('meta[name="description"][data-en]');
+      if (metaDesc) {
+        if (metaDesc.dataset.de === undefined) metaDesc.dataset.de = metaDesc.getAttribute('content');
+        metaDesc.setAttribute('content', lang === 'en' ? metaDesc.dataset.en : metaDesc.dataset.de);
+      }
+      updateThemeLabel();
+    }
 
     var themeBtn = document.querySelector('[data-theme-toggle]');
+    function updateThemeLabel() {
+      if (!themeBtn) return;
+      var dark = root.getAttribute('data-theme') === 'dark';
+      var lang = root.getAttribute('data-lang');
+      if (lang === 'en') {
+        themeBtn.setAttribute('aria-label', dark ? 'Toggle light mode' : 'Toggle dark mode');
+      } else {
+        themeBtn.setAttribute('aria-label', dark ? 'Hellmodus umschalten' : 'Dunkelmodus umschalten');
+      }
+    }
     if (themeBtn) {
       themeBtn.addEventListener('click', function () {
         var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         root.setAttribute('data-theme', next);
         localStorage.setItem('gc-theme', next);
-        themeBtn.setAttribute('aria-label', next === 'dark' ? 'Hellmodus umschalten' : 'Dunkelmodus umschalten');
+        updateThemeLabel();
       });
     }
+
+    var langBtn = document.querySelector('[data-lang-toggle]');
+    if (langBtn) {
+      langBtn.addEventListener('click', function () {
+        var next = root.getAttribute('data-lang') === 'de' ? 'en' : 'de';
+        root.setAttribute('data-lang', next);
+        root.lang = next;
+        localStorage.setItem('gc-lang', next);
+        translatePage(next);
+      });
+    }
+
+    translatePage(savedLang);
 
     var revealEls = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
