@@ -2041,12 +2041,14 @@
 
   /* ── Event Modal ── */
   var eventModal = document.getElementById('event-modal');
+  var eventHash = 'meet-match';
   var lastFocused = null;
-  function openEventModal() {
+  function openEventModal(fromHash) {
     if (!eventModal) return;
     lastFocused = document.activeElement;
     eventModal.hidden = false;
     document.body.style.overflow = 'hidden';
+    if (!fromHash) history.pushState(null, '', '#' + eventHash);
     var closeBtn = eventModal.querySelector('.event-modal__close');
     if (closeBtn) closeBtn.focus();
   }
@@ -2054,10 +2056,13 @@
     if (!eventModal) return;
     eventModal.hidden = true;
     document.body.style.overflow = '';
+    if (window.location.hash === '#' + eventHash) {
+      history.pushState(null, '', window.location.pathname + window.location.search);
+    }
     if (lastFocused) lastFocused.focus();
   }
   document.querySelectorAll('[data-event-open]').forEach(function (btn) {
-    btn.addEventListener('click', openEventModal);
+    btn.addEventListener('click', function () { openEventModal(false); });
   });
   document.querySelectorAll('[data-event-close]').forEach(function (el) {
     el.addEventListener('click', closeEventModal);
@@ -2065,6 +2070,11 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && eventModal && !eventModal.hidden) closeEventModal();
   });
+  window.addEventListener('popstate', function () {
+    if (window.location.hash === '#' + eventHash) openEventModal(true);
+    else if (eventModal && !eventModal.hidden) closeEventModal();
+  });
+  if (window.location.hash === '#' + eventHash) openEventModal(true);
 
   /* ── Mobile Nav ── */
   window.closeMobNav = function () {
