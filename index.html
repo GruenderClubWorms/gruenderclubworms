@@ -732,6 +732,219 @@
       flex-shrink: 0;
     }
 
+    button.ev {
+      background: none;
+      border: none;
+      font-family: inherit;
+      width: 100%;
+      text-align: left;
+    }
+
+    /* ─── Event Modal ─────────────────────────────────────── */
+    .event-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vh, 5rem) var(--pad-x);
+      overflow-y: auto;
+    }
+    .event-modal[hidden] { display: none; }
+
+    .event-modal__backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(12,12,34,0.6);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .event-modal__panel {
+      position: relative;
+      background: var(--white);
+      max-width: 640px;
+      width: 100%;
+      padding: clamp(2rem, 5vw, 3.5rem);
+      border-radius: 4px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+    }
+
+    .event-modal__close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      line-height: 1;
+      color: var(--stone);
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .event-modal__close:hover { background: var(--sand); color: var(--ink); }
+
+    .event-modal__meta {
+      color: var(--pink);
+      margin-bottom: 0.75rem;
+    }
+
+    .event-modal__title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      margin-bottom: 1.75rem;
+      padding-right: 2rem;
+    }
+
+    .event-modal__facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--sand);
+      border-bottom: 1px solid var(--sand);
+      margin-bottom: 1.5rem;
+    }
+    .event-modal__fact { display: flex; flex-direction: column; gap: 0.3rem; }
+    .event-modal__fact-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+    .event-modal__fact-value {
+      font-size: 0.88rem;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    .event-modal__route {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--pink);
+      border-bottom: 1px solid transparent;
+      margin-bottom: 1.75rem;
+      transition: border-color 0.18s;
+    }
+    .event-modal__route:hover { border-bottom-color: var(--pink); }
+
+    .event-modal__desc {
+      color: var(--stone);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+    .event-modal__desc p { margin-bottom: 1rem; }
+    .event-modal__desc p:first-child {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    .event-modal__list {
+      list-style: none;
+      margin: 0 0 1.25rem;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .event-modal__list li {
+      position: relative;
+      padding-left: 1.4rem;
+      color: var(--ink);
+    }
+    .event-modal__list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 7px;
+      height: 7px;
+      background: var(--pink);
+      border-radius: 1px;
+    }
+
+    .event-modal__paths-label {
+      margin-top: 2rem;
+      margin-bottom: 0.85rem;
+      color: var(--stone);
+    }
+
+    .event-modal__paths {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .event-path {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      padding: 1.1rem 1.4rem;
+      background: var(--navy);
+      border-radius: 999px;
+      transition: background 0.18s, transform 0.18s;
+    }
+    .event-path:hover { background: var(--navy-mid); transform: translateY(-1px); }
+
+    .event-path__text { display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; }
+    .event-path__label { font-weight: 600; font-size: 0.9rem; color: #fff; }
+    .event-path__desc { font-size: 0.76rem; color: rgba(255,255,255,0.5); line-height: 1.4; }
+
+    .event-path__icon {
+      flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--pink);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .event-path--soon {
+      background: var(--cream);
+      border: 1px solid var(--sand);
+    }
+    .event-path--soon:hover { background: var(--sand); }
+    .event-path--soon .event-path__label { color: var(--ink); }
+    .event-path--soon .event-path__desc { color: var(--stone); }
+    .event-path__badge {
+      flex-shrink: 0;
+      padding: 0.35rem 0.75rem;
+      background: var(--sand);
+      color: var(--stone);
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 560px) {
+      .event-modal__facts { grid-template-columns: 1fr; }
+      .event-path { flex-wrap: wrap; border-radius: 20px; }
+    }
+
     /* ─── Mitgliedschaft ─────────────────────────────────── */
     .membership {
       background: var(--cream);
@@ -1445,18 +1658,83 @@
 
     <div class="events__list">
 
-      <div class="ev ev--empty reveal">
-        <div class="ev__empty-icon" aria-hidden="true">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <button type="button" class="ev reveal" data-event-open aria-haspopup="dialog">
+        <div class="ev__date">
+          <span class="ev__day">18</span>
+          <span class="ev__mon" data-en="NOV">NOV</span>
         </div>
         <div class="ev__info">
-          <h3 class="ev__name" style="color:var(--stone);font-weight:400;" data-en="No events currently planned.">Derzeit sind keine Events geplant.</h3>
-          <span class="ev__loc" data-en="Follow us on Instagram to be the first to hear about new events.">Folge uns auf Instagram, um als Erstes von neuen Veranstaltungen zu erfahren.</span>
+          <span class="ev__type" data-en="Networking">Networking</span>
+          <h3 class="ev__name">Meet &amp; Match – Co-Founder Matching</h3>
+          <span class="ev__loc" data-en="5:00 PM · Hochschule Worms, Room A125">17:00 Uhr · Hochschule Worms, Raum A125</span>
         </div>
-      </div>
+        <span class="ev__arr" aria-hidden="true">→</span>
+      </button>
 
     </div>
   </section>
+
+
+  <!-- ═══ Event Modal ═══════════════════════════════════════════ -->
+  <div id="event-modal" class="event-modal" role="dialog" aria-modal="true" aria-labelledby="event-modal-title" hidden>
+    <div class="event-modal__backdrop" data-event-close></div>
+    <div class="event-modal__panel">
+      <button class="event-modal__close" data-event-close aria-label="Schließen" data-en-aria-label="Close">×</button>
+
+      <div class="event-modal__meta label" data-en="Networking · Nov 18, 2026">Networking · 18. November 2026</div>
+      <h2 id="event-modal-title" class="event-modal__title">Meet &amp; Match – Co-Founder Matching</h2>
+
+      <div class="event-modal__facts">
+        <div class="event-modal__fact">
+          <span class="event-modal__fact-label" data-en="When">Wann</span>
+          <span class="event-modal__fact-value" data-en="Nov 18, 2026 · 5:00 PM">18. November 2026 · 17:00 Uhr</span>
+        </div>
+        <div class="event-modal__fact">
+          <span class="event-modal__fact-label" data-en="Where">Wo</span>
+          <span class="event-modal__fact-value">Hochschule Worms, Raum A125<br>Erenburgerstraße 19, 67549 Worms</span>
+        </div>
+      </div>
+
+      <a class="event-modal__route" href="https://www.google.com/maps/search/?api=1&amp;query=Hochschule+Worms+Erenburgerstra%C3%9Fe+19+67549+Worms" target="_blank" rel="noopener noreferrer" data-en="Get directions →">
+        Route planen →
+      </a>
+
+      <div class="event-modal__desc">
+        <p data-en="Find your perfect match for your idea or project.">Finde dein perfektes Match für deine Idee/Projekt.</p>
+        <p data-en="Got an exciting idea, or just want to be part of an innovative startup? Then this event is exactly right for you!">Du hast eine spannende Idee oder einfach Lust, Teil eines innovativen Startups zu werden? Dann ist dieses Event genau das Richtige für dich!</p>
+        <p data-en="What's it about? Whether you're a techie, a creative, or a visionary — everyone who wants to build something big together is welcome. This event is all about finding co-founders, pitching ideas, and meeting like-minded people.">Worum geht's? Ob Techie, Kreativer oder Visionärin – alle sind willkommen, die den Wunsch verspüren, gemeinsam etwas Großes aufzubauen. Bei diesem Event geht es darum, Co-Founder zu finden, Ideen zu pitchen und Gleichgesinnte kennenzulernen.</p>
+        <ul class="event-modal__list">
+          <li data-en="Pitch your idea — short &amp; sharp">Pitch deine Idee – kurz &amp; knackig</li>
+          <li data-en="Find teammates with the right skills and mindset">Finde Mitstreiter mit passenden Skills und Mindset</li>
+          <li data-en="Matching wall — so no contact gets lost">Matching-Wand – damit kein Kontakt verloren geht</li>
+          <li data-en="Networking in a relaxed atmosphere">Netzwerken in entspannter Atmosphäre</li>
+          <li data-en="Food &amp; drinks included!">Essen &amp; Trinken inklusive!</li>
+        </ul>
+        <p data-en="Who's it for: founders, developers, designers, business minds — anyone who wants to start a company or support an idea.">Zielgruppe: Gründer*innen, Entwickler*innen, Designer*innen, Business-Minds – alle, die gründen wollen oder eine Idee unterstützen möchten.</p>
+      </div>
+
+      <div class="event-modal__paths-label label" data-en="Register as:">Anmelden als:</div>
+      <div class="event-modal__paths">
+        <a class="event-path" href="https://forms.gle/4w9poasZzbZefe8k7" target="_blank" rel="noopener noreferrer">
+          <span class="event-path__text">
+            <span class="event-path__label" data-en="I'm looking for a co-founder">Ich suche eine:n Co-Founder:in</span>
+            <span class="event-path__desc" data-en="You have an idea and are looking for people to build it with you.">Du hast eine Idee und suchst Mitstreiter:innen, die sie mit dir umsetzen.</span>
+          </span>
+          <span class="event-path__icon" aria-hidden="true">↗</span>
+        </a>
+        <a class="event-path event-path--soon"
+           href="mailto:gruenderclub@hs-worms.de?subject=Interesse%20%E2%80%93%20Als%20Co-Founder%20einem%20Startup%20beitreten&body=Name%3A%0AE-Mail%3A%0AStudiengang%20%28optional%29%3A%0A%0AMeine%20St%C3%A4rken/Skills%20%28z.B.%20Tech%2C%20Design%2C%20Business%2C%20Marketing%2C%20Vertrieb%29%3A%0A%0A%0AErfahrungslevel%20%28Anf%C3%A4nger%20/%20etwas%20Erfahrung%20/%20erfahren%29%3A%0A%0A%0AWelche%20Art%20von%20Startup/Idee%20interessiert%20mich%3A%0A%0A%0ASonstiges%20/%20Links%20%28z.B.%20LinkedIn%2C%20Portfolio%29%3A%0A"
+           title="Formular folgt in Kürze – bis dahin öffnet dies eine E-Mail, um dein Interesse zu hinterlegen"
+           data-en-title="Form coming soon — this opens an email to register your interest for now">
+          <span class="event-path__text">
+            <span class="event-path__label" data-en="I want to join a startup as co-founder">Ich möchte einem Startup als Co-Founder beitreten</span>
+            <span class="event-path__desc" data-en="You're looking for an existing project to join as a co-founder.">Du suchst ein bestehendes Projekt, dem du als Co-Founder:in beitreten kannst.</span>
+          </span>
+          <span class="event-path__badge" data-en="Coming soon">Bald verfügbar</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
 
   <!-- ═══ Mitgliedschaft ══════════════════════════════════════ -->
@@ -1783,6 +2061,33 @@
   }
 
   translatePage(savedLang);
+
+  /* ── Event Modal ── */
+  var eventModal = document.getElementById('event-modal');
+  var lastFocused = null;
+  function openEventModal() {
+    if (!eventModal) return;
+    lastFocused = document.activeElement;
+    eventModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    var closeBtn = eventModal.querySelector('.event-modal__close');
+    if (closeBtn) closeBtn.focus();
+  }
+  function closeEventModal() {
+    if (!eventModal) return;
+    eventModal.hidden = true;
+    document.body.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
+  }
+  document.querySelectorAll('[data-event-open]').forEach(function (btn) {
+    btn.addEventListener('click', openEventModal);
+  });
+  document.querySelectorAll('[data-event-close]').forEach(function (el) {
+    el.addEventListener('click', closeEventModal);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && eventModal && !eventModal.hidden) closeEventModal();
+  });
 
   /* ── Mobile Nav ── */
   window.closeMobNav = function () {
