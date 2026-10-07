@@ -816,6 +816,7 @@
       margin-bottom: 1.5rem;
     }
     .event-modal__fact { display: flex; flex-direction: column; gap: 0.3rem; }
+    .event-modal__fact:last-child { grid-column: 1 / -1; }
     .event-modal__fact-label {
       font-size: 0.68rem;
       font-weight: 600;
@@ -853,6 +854,28 @@
       font-size: 1.15rem;
       color: var(--ink);
       font-style: italic;
+    }
+
+    .event-modal__desc strong { color: var(--ink); font-weight: 600; }
+    .event-modal__desc h3 {
+      margin: 1.5rem 0 0.6rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--pink);
+    }
+
+    .event-modal__callout {
+      margin: 1.5rem 0 0;
+      padding: 0.9rem 1.1rem;
+      background: var(--pink-faint);
+      border-left: 3px solid var(--pink);
+      border-radius: 2px;
+      color: var(--ink);
+      font-size: 0.9rem;
+      font-weight: 600;
+      line-height: 1.5;
     }
 
     .event-modal__list {
@@ -1670,6 +1693,10 @@
           <span class="event-modal__fact-value" data-en="Nov 18, 2026 · 5:00 PM">18. November 2026 · 17:00 Uhr</span>
         </div>
         <div class="event-modal__fact">
+          <span class="event-modal__fact-label" data-en="Duration">Dauer</span>
+          <span class="event-modal__fact-value" data-en="2 hours">2 Stunden</span>
+        </div>
+        <div class="event-modal__fact">
           <span class="event-modal__fact-label" data-en="Where">Wo</span>
           <span class="event-modal__fact-value">Hochschule Worms, Raum A125<br>Erenburgerstraße 19, 67549 Worms</span>
         </div>
@@ -1680,17 +1707,20 @@
       </a>
 
       <div class="event-modal__desc">
-        <p data-en="Find your perfect match for your idea or project.">Finde dein perfektes Match für deine Idee/Projekt.</p>
-        <p data-en="Got an exciting idea, or just want to be part of an innovative startup? Then this event is exactly right for you!">Du hast eine spannende Idee oder einfach Lust, Teil eines innovativen Startups zu werden? Dann ist dieses Event genau das Richtige für dich!</p>
-        <p data-en="What's it about? Whether you're a techie, a creative, or a visionary — everyone who wants to build something big together is welcome. This event is all about finding co-founders, pitching ideas, and meeting like-minded people.">Worum geht's? Ob Techie, Kreativer oder Visionärin – alle sind willkommen, die den Wunsch verspüren, gemeinsam etwas Großes aufzubauen. Bei diesem Event geht es darum, Co-Founder zu finden, Ideen zu pitchen und Gleichgesinnte kennenzulernen.</p>
+        <p data-en="Relaxed pitches, honest feedback, new teammates: your evening for ideas and connections!">Lockere Pitches, ehrliches Feedback, neue Mitstreiter*innen: dein Abend für Ideen und Kontakte!</p>
+        <p data-en="<strong>Meet &amp; Match is back!</strong> During this Founders' Week, Gründerclub is inviting you again: to great conversations, new connections, and ideas that leave you wanting more."><strong>Meet &amp; Match ist zurück!</strong> Auch in dieser Gründerwoche lädt dich der Gründerclub wieder ein: auf gute Gespräche, neue Kontakte und Ideen, die Lust auf mehr machen.</p>
+
+        <h3 data-en="How it works">So läuft's</h3>
+        <p data-en="No pitch deck needed: what matters is what's behind your idea. In rotating rounds — sometimes in small groups, sometimes one-on-one — you simply tell us what you're working on and why it excites you. That way you meet lots of people in a short time who think along with you, give honest feedback, and may bring exactly the know-how you're still missing. And if it clicks? Then you simply stay in touch, because during the open networking the evening is far from over.">Kein Pitch-Deck nötig: Bei uns zählt, was hinter deiner Idee steckt. In wechselnden Runden, mal in kleinen Gruppen, mal im One-on-One, erzählst du einfach, woran du arbeitest und warum es dich begeistert. So triffst du in kurzer Zeit viele Menschen, die mitdenken, ehrliches Feedback geben und vielleicht genau das Know-how mitbringen, das dir noch fehlt. Und wenn's klickt? Dann bleibt ihr einfach dran, denn beim offenen Netzwerken ist der Abend noch lange nicht vorbei.</p>
+        <p data-en="Techie, creative mind, or visionary? Doesn't matter. All that counts here: the drive to make something happen. Maybe you'll meet your next team member. Maybe you'll get exactly the input that takes your idea to the next level. Maybe something really big starts here. Find out!">Techie, Kreativkopf oder Visionär*in? Egal. Hier zählt nur eins: Lust, etwas zu bewegen. Vielleicht triffst du dein nächstes Teammitglied. Vielleicht bekommst du genau den Input, der deine Idee auf das nächste Level bringt. Vielleicht startet hier etwas richtig Großes. Finde es heraus!</p>
         <ul class="event-modal__list">
-          <li data-en="Pitch your idea — short &amp; sharp">Pitch deine Idee – kurz &amp; knackig</li>
-          <li data-en="Find teammates with the right skills and mindset">Finde Mitstreiter mit passenden Skills und Mindset</li>
-          <li data-en="Matching wall — so no contact gets lost">Matching-Wand – damit kein Kontakt verloren geht</li>
-          <li data-en="Networking in a relaxed atmosphere">Netzwerken in entspannter Atmosphäre</li>
-          <li data-en="Food &amp; drinks included!">Essen &amp; Trinken inklusive!</li>
+          <li data-en="Pitching without a stage: authentic and personal">Pitch ohne Bühne: authentisch und persönlich</li>
+          <li data-en="Real feedback in small groups &amp; one-on-one">Echtes Feedback in kleinen Gruppen &amp; One-on-One</li>
+          <li data-en="Open networking in a relaxed atmosphere">Offenes Netzwerken in entspannter Atmosphäre</li>
+          <li data-en="Snacks &amp; drinks included!">Snacks &amp; Getränke inklusive!</li>
         </ul>
-        <p data-en="Who's it for: founders, developers, designers, business minds — anyone who wants to start a company or support an idea.">Zielgruppe: Gründer*innen, Entwickler*innen, Designer*innen, Business-Minds – alle, die gründen wollen oder eine Idee unterstützen möchten.</p>
+        <p data-en="<strong>Who's it for?</strong> Students and graduates who want to start a company or support an idea, as well as startup teams and founders looking for co-founders and teammates."><strong>Für wen?</strong> Studierende und Absolvent*innen, die gründen wollen oder eine Idee unterstützen möchten, sowie Startup-Teams und Gründer*innen auf der Suche nach Co-Founder*innen und Mitstreiter*innen.</p>
+        <p class="event-modal__callout" data-en="Only 30 spots — secure yours now!">Nur 30 Plätze, sichere dir jetzt deinen Platz!</p>
       </div>
 
       <div class="event-modal__paths-label label" data-en="Register as:">Anmelden als:</div>
